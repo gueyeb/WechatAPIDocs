@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
         // enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        mWebView.loadUrl("file:///android_asset/www/index4875.html");
     }
 
     @Override

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=JS_SDK_DOCUMENT by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>JS SDK DOCUMENT - WeChat Official Account Admin Platform</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="http://admin.wechat.com/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="WeChat Official Account Admin Platform (en)" />
+<link rel="alternate" type="application/atom+xml" title="WeChat Official Account Admin Platform Atom feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadeb8e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-JS_SDK_DOCUMENT skin-vector">
+		
+<!--网站头部-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<div class="headWrap">
+	<div class="header"  id="header">
+		<div class="headerContent">
+			<div class="left">
+      <a class="block" href="http://admin.wechat.com/wiki">
+        <img src="images/logo_en_US.png" alt="WeChat Official Account Admin Platform">
+      </a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>		
+</div>
+
+<div class="bottomnav">
+		<a href="http://admin.wechat.com/wiki" title="Log in" class="loginbtn" style=""></a>
+			<a class="topbtn" href="javascript:;" onclick="document.getElementById('header').scrollIntoView(true);"></a>
+</div>
+<script type="text/javascript" src="js/wiki_en_US4bcb.js?20120215"></script>
+<!--[if IE 6]>
+<style type="text/css">
+html{background-image:url(about:blank);background-attachment:fixed;}
+#content{overflow-x:hidden;}
+.bottomnav{position:absolute;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-30));}
+</style>
+<![endif]-->
+<!--网站头部-->
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div class="mainwrapper">
+		<!-- content -->
+		<div id="content">
+      			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+        <h1 id="firstHeading" class="firstHeading">JS SDK DOCUMENT<div><a href="javascript:;" onclick="document.referrer ?location.replace(document.referrer):location.href='index4875.html';return false;" class="back">Back</a></div></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent" class="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From WeChat Official Account Admin Platform</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Steps_for_Using_the_JS-SDK"><span class="tocnumber">1.1</span> <span class="toctext">Steps for Using the JS-SDK</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Step_1:_Binding_Official_Account_to_Domains"><span class="tocnumber">1.1.1</span> <span class="toctext">Step 1: Binding Official Account to Domains</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Step_2:_Import_the_JS_Library_File"><span class="tocnumber">1.1.2</span> <span class="toctext">Step 2: Import the JS Library File</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Step_3:_Inject_Correct_Authentication_Configuration_via_the_config_API"><span class="tocnumber">1.1.3</span> <span class="toctext">Step 3: Inject Correct Authentication Configuration via the config API</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Step_4:_Process_the_Successful_Verification_via_the_ready_API"><span class="tocnumber">1.1.4</span> <span class="toctext">Step 4: Process the Successful Verification via the ready API</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Step_5:_Process_the_Failed_Verification_via_the_error_API"><span class="tocnumber">1.1.5</span> <span class="toctext">Step 5: Process the Failed Verification via the error API</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Calling_an_API"><span class="tocnumber">1.2</span> <span class="toctext">Calling an API</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Basic_API"><span class="tocnumber">2</span> <span class="toctext">Basic API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#API_for_Determining_Whether_the_Current_Client_Version_Supports_the_Provided_JS"><span class="tocnumber">2.1</span> <span class="toctext">API for Determining Whether the Current Client Version Supports the Provided JS</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Sharing_API"><span class="tocnumber">3</span> <span class="toctext">Sharing API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#API_for_Obtaining_Share_Status_for_.22Share_on_Moments.22_and_Customizing_Sharing_Contents"><span class="tocnumber">3.1</span> <span class="toctext">API for Obtaining Share Status for "Share on Moments" and Customizing Sharing Contents</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#API_for_Obtaining_Send_Status_for_.22Send_to_Chat.22_and_Customizing_Sharing_Contents"><span class="tocnumber">3.2</span> <span class="toctext">API for Obtaining Send Status for "Send to Chat" and Customizing Sharing Contents</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Image_API"><span class="tocnumber">4</span> <span class="toctext">Image API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#API_for_Taking_Photos_or_Choosing_Images_from_the_Mobile_Phone_Album"><span class="tocnumber">4.1</span> <span class="toctext">API for Taking Photos or Choosing Images from the Mobile Phone Album</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#API_for_Previewing_Images"><span class="tocnumber">4.2</span> <span class="toctext">API for Previewing Images</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#API_for_Uploading_Images"><span class="tocnumber">4.3</span> <span class="toctext">API for Uploading Images</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#API_for_Downloading_Images"><span class="tocnumber">4.4</span> <span class="toctext">API for Downloading Images</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Audio_API"><span class="tocnumber">5</span> <span class="toctext">Audio API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#API_for_Starting_Recording"><span class="tocnumber">5.1</span> <span class="toctext">API for Starting Recording</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#API_for_Stopping_Recording"><span class="tocnumber">5.2</span> <span class="toctext">API for Stopping Recording</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#API_for_Automatically_Stopping_Recording"><span class="tocnumber">5.3</span> <span class="toctext">API for Automatically Stopping Recording</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#API_for_Playing_Voice_Recording"><span class="tocnumber">5.4</span> <span class="toctext">API for Playing Voice Recording</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#API_for_Pausing_Voice_Recording"><span class="tocnumber">5.5</span> <span class="toctext">API for Pausing Voice Recording</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#API_for_Stopping_Voice_Recording"><span class="tocnumber">5.6</span> <span class="toctext">API for Stopping Voice Recording</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#API_for_Finishing_Playing_Voice_Recording"><span class="tocnumber">5.7</span> <span class="toctext">API for Finishing Playing Voice Recording</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#API_for_Uploading_Voice_Recording"><span class="tocnumber">5.8</span> <span class="toctext">API for Uploading Voice Recording</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#API_for_Downloading_Voice_Recording"><span class="tocnumber">5.9</span> <span class="toctext">API for Downloading Voice Recording</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#Intelligent_API"><span class="tocnumber">6</span> <span class="toctext">Intelligent API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="#API_for_Voice_Dictation_and_Returning_Dictation_Results"><span class="tocnumber">6.1</span> <span class="toctext">API for Voice Dictation and Returning Dictation Results</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="#Equipment_Information"><span class="tocnumber">7</span> <span class="toctext">Equipment Information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="#API_for_Obtaining_Network_Status"><span class="tocnumber">7.1</span> <span class="toctext">API for Obtaining Network Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Geographic_Location"><span class="tocnumber">8</span> <span class="toctext">Geographic Location</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#API_for_Viewing_Location_by_Using_the_Built-in_Map_within_WeChat"><span class="tocnumber">8.1</span> <span class="toctext">API for Viewing Location by Using the Built-in Map within WeChat</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#API_for_Obtaining_Geographic_Location"><span class="tocnumber">8.2</span> <span class="toctext">API for Obtaining Geographic Location</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#Interface_Controls"><span class="tocnumber">9</span> <span class="toctext">Interface Controls</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="#API_for_Hiding_the_Top_Right_Menu"><span class="tocnumber">9.1</span> <span class="toctext">API for Hiding the Top Right Menu</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#API_for_Displaying_the_Top_Right_Menu"><span class="tocnumber">9.2</span> <span class="toctext">API for Displaying the Top Right Menu</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#API_for_Closing_the_Current_Window"><span class="tocnumber">9.3</span> <span class="toctext">API for Closing the Current Window</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#API_for_Hiding_Menu_Items_in_Batches"><span class="tocnumber">9.4</span> <span class="toctext">API for Hiding Menu Items in Batches</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#API_for_Displaying_Menu_Items_within_Sub-Menus"><span class="tocnumber">9.5</span> <span class="toctext">API for Displaying Menu Items within Sub-Menus</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#API_for_Hiding_All_Non-basic_Menu_Items"><span class="tocnumber">9.6</span> <span class="toctext">API for Hiding All Non-basic Menu Items</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#API_for_Displaying_All_Non-basic_Menu_Items"><span class="tocnumber">9.7</span> <span class="toctext">API for Displaying All Non-basic Menu Items</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-44"><a href="#Scanning_a_QR_Code"><span class="tocnumber">10</span> <span class="toctext">Scanning a QR Code</span></a>
+<ul>
+<li class="toclevel-2 tocsection-45"><a href="#API_for_Scanning_a_QR_Code"><span class="tocnumber">10.1</span> <span class="toctext">API for Scanning a QR Code</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-46"><a href="#WeChat_Coupons"><span class="tocnumber">11</span> <span class="toctext">WeChat Coupons</span></a>
+<ul>
+<li class="toclevel-2 tocsection-47"><a href="#Display_a_List_of_Store-Suitable_Coupons_and_Obtaining_the_User.E2.80.99s_Selection"><span class="tocnumber">11.1</span> <span class="toctext">Display a List of Store-Suitable Coupons and Obtaining the User’s Selection</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#API_for_Adding_Multiple_Coupons"><span class="tocnumber">11.2</span> <span class="toctext">API for Adding Multiple Coupons</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#API_for_Viewing_Coupons_in_WeChat_Card_Pack"><span class="tocnumber">11.3</span> <span class="toctext">API for Viewing Coupons in WeChat Card Pack</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-50"><a href="#Appendix_1:_Signature_Algorithm_for_the_JS-SDK_Using_Rights"><span class="tocnumber">12</span> <span class="toctext">Appendix 1: Signature Algorithm for the JS-SDK Using Rights</span></a></li>
+<li class="toclevel-1 tocsection-51"><a href="#Appendix_2:_List_of_All_JS_APIs"><span class="tocnumber">13</span> <span class="toctext">Appendix 2: List of All JS APIs</span></a></li>
+<li class="toclevel-1 tocsection-52"><a href="#Appendix_3:_List_of_All_Menu_Items"><span class="tocnumber">14</span> <span class="toctext">Appendix 3: List of All Menu Items</span></a></li>
+<li class="toclevel-1 tocsection-53"><a href="#Appendix_4:_Coupon_Extension_Field_and_Signature_Generation_Algorithm"><span class="tocnumber">15</span> <span class="toctext">Appendix 4: Coupon Extension Field and Signature Generation Algorithm</span></a></li>
+<li class="toclevel-1 tocsection-54"><a href="#Appendix_5:_Common_Errors_and_Solutions"><span class="tocnumber">16</span> <span class="toctext">Appendix 5: Common Errors and Solutions</span></a></li>
+<li class="toclevel-1 tocsection-55"><a href="#Appendix_6:_Sample_Code"><span class="tocnumber">17</span> <span class="toctext">Appendix 6: Sample Code</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Overview"><b>Overview</b></span></h2>
+<p>WeChat JS-SDK (JavaScript SDK) is a WeChat-based web page development toolkit provided by the WeChat Official Account Admin Platform for web developers.
+</p><p>Through the WeChat JS-SDK, web developers can easily use native mobile features including taking photos, selecting images, recording voice and location from within WeChat. Developers may also provide WeChat users with a better web-based user experience by directly tapping into WeChat-specific features such as sharing, QR code scanning, coupons and payments.
+</p><p>This document describes how to use the WeChat JS-SDK and contains relevant precautions for web developers.
+</p>
+<h3> <span class="mw-headline" id="Steps_for_Using_the_JS-SDK"><b>Steps for Using the JS-SDK</b></span></h3>
+<h4> <span class="mw-headline" id="Step_1:_Binding_Official_Account_to_Domains"><b>Step 1: Binding Official Account to Domains</b></span></h4>
+<p>An Official Account needs to be bound to pre-specified domains before using the WeChat JS-SDK. To do this, you're required to first write an email titled "Application to bind domains to the WeChat JS-SDK" to bd@wechat.com. The email should include the WeChat ID of your Official Account and domains that you would like to bind to the WeChat JS-SDK. Your domain must be a second-level domain or subdomain and you may provide up to 3 domain names. An example application email is provided below:
+</p><p>Subject: "Application to bind domains to the WeChat JS-SDK"
+</p><p>Message:
+</p><p>WeChat ID for Official Account: oa_test_wechatid
+</p><p>Domains: example.com, a.example.com, b.example.com
+</p>
+<h4> <span class="mw-headline" id="Step_2:_Import_the_JS_Library_File"><b>Step 2: Import the JS Library File</b></span></h4>
+<p>Import the following JS library file in the page where the JS API is to be called (https supported): <a href="../../res.wx.qq.com/open/js/jweixin-1.0.0.js" class="external free" rel="nofollow">http://res.wx.qq.com/open/js/jweixin-1.0.0.js</a>.
+</p><p>Note: AMD/CMD standard module loading methods are supported for loading the module.
+</p>
+<h4> <span class="mw-headline" id="Step_3:_Inject_Correct_Authentication_Configuration_via_the_config_API"><b>Step 3: Inject Correct Authentication Configuration via the config API</b></span></h4>
+<p><font color="red">All pages requiring the JS-SDK must be injected with configuration information otherwise they cannot be called. A web page with a static URL only needs inject the configuration information once. However, a single page application (SPA) that dynamically changes it’s URL  must inject updated configuration information each time the URL changes. At the current time, HTML5 pushState is not supported when injecting configuration information in the WeChat Android client. This issue will be corrected in Android version 6.2. </font>
+</p>
+<pre>
+wx.config({
+    debug: true, // Enables debugging mode. Return values of all APIs called will be shown on the client. To view the sent parameters, open the log view of developer tools on a computer browser. The parameter information can only be printed when viewed from a computer.
+    appId: '', // Required, unique identifier of the official account
+    timestamp: '', // Required, timestamp for the generated signature
+    nonceStr: '', // Required, random string for the generated signature
+    signature: '', // Required, signature. See Appendix 1.
+    jsApiList: [] // Required, list of JS APIs to be used. See Appendix 2 for the list of all JS APIs
+ });
+</pre>
+<h4> <span class="mw-headline" id="Step_4:_Process_the_Successful_Verification_via_the_ready_API"><b>Step 4: Process the Successful Verification via the ready API</b></span></h4>
+<pre>
+wx.ready(function(){
+    // The callback function of ready API will be executed after a successful config authentication, and each API calling must be done after the config API obtains a result. As config is an asynchronous operation, all relevant API calling must be put in the callback function if it needs to be called while the page loads. A user-initiated API call can be called directly without needing to be put in the callback function.
+
+});
+</pre>
+<h4> <span class="mw-headline" id="Step_5:_Process_the_Failed_Verification_via_the_error_API"><b>Step 5: Process the Failed Verification via the error API</b></span></h4>
+<pre>wx.error(function(res){
+
+    // The callback function of error API will be executed if config authentication fails. If authentication failure is due to an expired signature, the detailed error information can be viewed by enabling the debugging mode within config API, or via the returned res parameter. The signature can be updated here for the SPA.
+
+});
+</pre>
+<h3> <span class="mw-headline" id="Calling_an_API"><b>Calling an API </b></span></h3>
+<p>All APIs are called through the wx object (or jWeixin object). Parameters are placed in a variable of an JSON object type. In addition to parameters specific to each API type, there are also the following general parameters for all APIs:
+</p>
+<ol><li>success: indicates the callback function executed when the API call is successful
+</li><li>fail: indicates the callback function executed when the API call fails
+</li><li>complete: indicates the callback function executed when the API call has completed, no matter whether it succeeds or fails
+</li><li>cancel: indicates the callback function executed when a user clicks the cancel menu item, available for a those APIs having a user cancel  menu item
+</li><li>trigger: indicates the callback function when menu items are clicked, supporting only relevant APIs in menu items
+</li></ol>
+<p>Caution:<font color="red">Do not use asynchronous AJAX to update the sharing content in trigger callback function as sharing is a synchronous operation in the WeChat client and the response from the AJAX request in the current moment will not be returned.</font>
+</p><p>All of the above functions are called with parameters placed in the object. In addition to data returned by specific to each API, there is a general parameter errMsg for all APIs. Its value has the following format:
+</p>
+<ol><li>Successful call: "xxx:ok", with xxx indicating the called API name
+</li><li>User cancelled: "xxx:cancel", with xxx indicating the called API name
+</li><li>Failed call: Contains specific error information
+</li></ol>
+<h2> <span class="mw-headline" id="Basic_API"><b>Basic API</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Determining_Whether_the_Current_Client_Version_Supports_the_Provided_JS"><b>API for Determining Whether the Current Client Version Supports the Provided JS</b></span></h3>
+<pre>
+wx.checkJsApi({
+    jsApiList: ['chooseImage'] // List of JS APIs to be checked. See Appendix 2 for the list of all JS APIs.
+    success: function(res) {
+        // Returned as key-value pairs, true for available API and false for unavailable API
+        // Example: {&quot;checkResult&quot;:{&quot;chooseImage&quot;:true},&quot;errMsg&quot;:&quot;checkJsApi:ok&quot;}
+    });
+</pre>
+<p>Note: The checkJsApi is a reserved API newly introduced in WeChat client V6.0.2. The initial release of the developer APIs don’t need to be checked via the checkJsApi API.
+</p>
+<h2> <span class="mw-headline" id="Sharing_API"><b>Sharing API</b></span></h2>
+<p>Please note that violations including offering rewards to users for sharing content are prohibited. If any such violations are found, official account API access may be permanently revoked. 
+</p>
+<h3> <span class="mw-headline" id="API_for_Obtaining_Share_Status_for_.22Share_on_Moments.22_and_Customizing_Sharing_Contents"><b>API for Obtaining Share Status for "Share on Moments" and Customizing Sharing Contents</b></span></h3>
+<pre>
+wx.onMenuShareTimeline({
+    title: '', // Sharing title
+    link: '', // Sharing link
+    imgUrl: '', // Sharing image URL
+    success: function () { 
+        // Callback function executed after a user confirms sharing
+    },
+    cancel: function () { 
+        // Callback function executed after a user cancels sharing
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Obtaining_Send_Status_for_.22Send_to_Chat.22_and_Customizing_Sharing_Contents"><b>API for Obtaining Send Status for "Send to Chat" and Customizing Sharing Contents</b></span></h3>
+<pre>
+wx.onMenuShareAppMessage({
+    title: '', // Sharing title
+    desc: '', // Sharing description
+    link: '', // Sharing link
+    imgUrl: '', // Sharing image URL
+    type: '', // Sharing type, such as “music”, “video “ or “link”. It is “link” by default.
+    dataUrl: '', // The data URL should be provided for items of type “music” or “video”. It is null by default.
+    success: function () { 
+        // Callback function executed after a user confirms sharing
+    },
+    cancel: function () { 
+        // Callback function executed after a user cancels sharing
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="Image_API"><b>Image API</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Taking_Photos_or_Choosing_Images_from_the_Mobile_Phone_Album"><b>API for Taking Photos or Choosing Images from the Mobile Phone Album</b></span></h3>
+<pre>
+wx.chooseImage({
+    success: function (res) {
+        var localIds = res.localIds; // Local ID list of selected images. localIds can be used as the src attribute of the img tag to display images.
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Previewing_Images"><b>API for Previewing Images</b></span></h3>
+<pre>
+wx.previewImage({
+    current: '', // URL of the current image
+    urls: [] // URL list of the images to be previewed
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Uploading_Images"><b>API for Uploading Images</b></span></h3>
+<pre>
+wx.uploadImage({
+    localId: '', // Local ID of the image to be uploaded, obtained from the chooseImage API
+    isShowProgressTips: 1, // 1 by default, which shows the progress tips
+    success: function (res) {
+        var serverId = res.serverId; // Server ID offor the uploaded returned image
+    }
+});
+</pre>
+<p>Note: The uploaded images will expire after 3 three days. Developers can download images to their own servers via the WeChat multimedia API. The serverId obtained here is media_id. Please refer to <a href="indexf3da.html?title=Transferring_Multimedia_Files" class="external text" rel="nofollow">Transferring Multimedia Files</a>. Calls to the multimedia file download API are currently limited to 10,000 calls per day. To increase the frequency, please write an email titled "Apply for Increase of Multimedia API Calling Limit" to open-weixin@qq.com, briefly describing your project, providing a link to the project, and explaining the projected user quantity and usage quantity.
+</p>
+<h3> <span class="mw-headline" id="API_for_Downloading_Images"><b>API for Downloading Images</b></span></h3>
+<pre>
+wx.downloadImage({
+    serverId: '', // Server ID of the image to be downloaded, obtained from the uploadImage API
+    isShowProgressTips: 1, // 1 by default, which shows the progress tips
+    success: function (res) {
+        var localId = res.localId; // Local ID where the returnedof the downloaded image is downloaded
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="Audio_API"><b>Audio API</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Starting_Recording"><b>API for Starting Recording</b></span></h3>
+<pre>
+wx.startRecord();
+</pre>
+<h3> <span class="mw-headline" id="API_for_Stopping_Recording"><b>API for Stopping Recording</b></span></h3>
+<pre>
+wx.stopRecord({
+    success: function (res) {
+        var localId = res.localId;
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Automatically_Stopping_Recording"><b>API for Automatically Stopping Recording</b></span></h3>
+<pre>
+wx.onVoiceRecordEnd({
+    // The complete callback function will be executed if recording does not stop within 1 minute
+    complete: function (res) {
+        var localId = res.localId; 
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Playing_Voice_Recording"><b>API for Playing Voice Recording</b></span></h3>
+<pre>
+wx.playVoice({
+    localId: '' // Local ID of the voice recording to be played, obtained from the stopRecord API
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Pausing_Voice_Recording"><b>API for Pausing Voice Recording</b></span></h3>
+<pre>
+wx.pauseVoice({
+    localId: '' // Local ID of the voice recording to be paused, obtained from the stopRecord API
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Stopping_Voice_Recording"><b>API for Stopping Voice Recording</b></span></h3>
+<pre>
+wx.stopVoice({
+    localId: '' // Local ID of the voice recording to be stopped, obtained from the stopRecord API
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Finishing_Playing_Voice_Recording"><b>API for Finishing Playing Voice Recording</b></span></h3>
+<pre>
+wx.onVoicePlayEnd({
+    success: function (res) {
+        var localId = res.localId; // Local ID of the returned voice recording to be played
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Uploading_Voice_Recording"><b>API for Uploading Voice Recording</b></span></h3>
+<pre>
+wx.uploadVoice({
+    localId: '', // Local ID of the voice recording to be uploaded, obtained from the stopRecord API
+    isShowProgressTips: 1, // 1 by default, which shows the progress tips
+        success: function (res) {
+        var serverId = res.serverId; // Server ID of the returned uploaded voice recording
+    }
+});
+</pre>
+<p>Note: Uploaded voice recording will expire after 3three days. Developers can download voices to their own servers via the WeChat multimedia API. The serverId obtained here is media_id. Please refer to <a href="indexf3da.html?title=Transferring_Multimedia_Files" class="external text" rel="nofollow">Transferring Multimedia Files</a>. Calls to the multimedia file download API are currently limited to 10,000 calls per day. To increase the frequency, please write an email titled "Apply for Increase of Multimedia API Calling Limit" to open-weixin@qq.com, briefly describing your project, providing a link to the project, and explaining the projected user quantity and usage quantity.
+</p>
+<h3> <span class="mw-headline" id="API_for_Downloading_Voice_Recording"><b>API for Downloading Voice Recording</b></span></h3>
+<pre>
+wx.downloadVoice({
+    serverId: '', // Server ID of the voice recording to be downloaded, obtained from the uploadVoice API
+    isShowProgressTips: 1, // 1 by default, which shows the progress tips
+    success: function (res) {
+        var localId = res.localId; // Local ID of the downloaded voice
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="Intelligent_API"><b>Intelligent API</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Voice_Dictation_and_Returning_Dictation_Results"><b>API for Voice Dictation and Returning Dictation Results</b></span></h3>
+<pre>wx.translateVoice({
+  localId: "", //Local ID of the voice recording to be recognized, obtained from the related recording API. <font color="red">Currently, only supports recognition of Mandarin Chinese</font>
+   isShowProgressTips: 1, // 1 by default, which shows the progress tips
+   success: function (res) {
+       alert(res.translateResult); // Voice dictation result
+   }
+});
+</pre>
+<h2> <span class="mw-headline" id="Equipment_Information"><b>Equipment Information</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Obtaining_Network_Status"><b>API for Obtaining Network Status</b></span></h3>
+<pre>
+wx.getNetworkType({
+    success: function (res) {
+        var networkType = res.networkType; // Returns network type, including 2g, 3g, 4g and wifi
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="Geographic_Location"><b>Geographic Location</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Viewing_Location_by_Using_the_Built-in_Map_within_WeChat"><b>API for Viewing Location by Using the Built-in Map within WeChat</b></span></h3>
+<pre>
+wx.openLocation({
+    latitude: 0, // Latitude, floating number, between 90 and -90
+    longitude: 0, // Longitude, floating number, between 180 and -180
+    name: '', // Location name
+    address: '', // Detailed description of address
+    scale: 1, // Map scale level, integer value, between 1 and 28. It is the maximum value by default.
+    infoUrl: '' // Hyperlink displayed at the bottom of the location viewing interface, which can be clicked to view the URL
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Obtaining_Geographic_Location"><b>API for Obtaining Geographic Location</b></span></h3>
+<pre>
+wx.getLocation({
+    success: function (res) {
+        var latitude = res.latitude; // Latitude, floating number, between 90 and -90
+        var longitude = res.longitude; // Longitude, floating number, between 180 and -180
+        var speed = res.speed; // Speed, Unit: m/s
+        var accuracy = res.accuracy; // Location accuracy
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="Interface_Controls"><b>Interface Controls</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Hiding_the_Top_Right_Menu"><b>API for Hiding the Top Right Menu</b></span></h3>
+<pre>
+wx.hideOptionMenu();
+</pre>
+<h3> <span class="mw-headline" id="API_for_Displaying_the_Top_Right_Menu"><b>API for Displaying the Top Right Menu</b></span></h3>
+<pre>
+wx.showOptionMenu();
+</pre>
+<h3> <span class="mw-headline" id="API_for_Closing_the_Current_Window"><b>API for Closing the Current Window</b></span></h3>
+<pre>
+wx.closeWindow();
+</pre>
+<h3> <span class="mw-headline" id="API_for_Hiding_Menu_Items_in_Batches"><b>API for Hiding Menu Items in Batches</b></span></h3>
+<pre>
+wx.hideMenuItems({
+    menuList: [] // Menu items to be hidden. See Appendix 3 for a list of all menu items.
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Displaying_Menu_Items_within_Sub-Menus"><b>API for Displaying Menu Items within Sub-Menus</b></span></h3>
+<pre>
+wx.showMenuItems({
+    menuList: [] // Menu items to be displayed. See Appendix 3 for a list of all menu items.
+});
+
+</pre>
+<h3> <span class="mw-headline" id="API_for_Hiding_All_Non-basic_Menu_Items"><b>API for Hiding All Non-basic Menu Items</b></span></h3>
+<pre>
+wx.hideAllNonBaseMenuItem();
+</pre>
+<h3> <span class="mw-headline" id="API_for_Displaying_All_Non-basic_Menu_Items"><b>API for Displaying All Non-basic Menu Items</b></span></h3>
+<pre>
+wx.showAllNonBaseMenuItem();
+</pre>
+<h2> <span class="mw-headline" id="Scanning_a_QR_Code"><b>Scanning a QR Code</b></span></h2>
+<h3> <span class="mw-headline" id="API_for_Scanning_a_QR_Code"><b>API for Scanning a QR Code</b></span></h3>
+<pre>
+wx.scanQRCode({
+    desc: 'scanQRCode desc',
+    needResult: 0, // 0 by default, with the scanning result processed by WeChat. The scanning result is directly returned if it is 1.
+    scanType: [&quot;qrCode&quot;,&quot;barCode&quot;], // Scanning type, including QR code or bar code. Both by default.
+    success: function (res) {
+        var result = res.resultStr; // Scanning result when needResult is 1
+    }
+});
+</pre>
+<h2> <span class="mw-headline" id="WeChat_Coupons"><b>WeChat Coupons</b></span></h2>
+<h3> <span class="mw-headline" id="Display_a_List_of_Store-Suitable_Coupons_and_Obtaining_the_User.E2.80.99s_Selection"><b>Display a List of Store-Suitable Coupons and Obtaining the User’s Selection</b></span></h3>
+<pre>
+wx.chooseCard({
+    shopId: '', // Store ID
+    cardType: '', // Coupon type
+    cardId: '', // Coupon ID
+    timestamp: 0, // Signature’s timestamp
+    nonceStr: '', // Signature’s random string 
+    signType: '', // Signature type, SHA1 by default
+    cardSign: '', // Coupon signature. See Appendix 4 for details.
+    success: function (res) {
+        var cardList= res.cardList; // List of coupons selected by the user
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Adding_Multiple_Coupons"><b>API for Adding Multiple Coupons</b></span></h3>
+<pre>
+wx.addCard({
+    cardList: [{
+        cardId: '',
+        cardExt: ''
+    }], // List of coupons to be added
+    success: function (res) {
+        var cardList = res.cardList; // List of added coupons
+    }
+});
+</pre>
+<h3> <span class="mw-headline" id="API_for_Viewing_Coupons_in_WeChat_Card_Pack"><b>API for Viewing Coupons in WeChat Card Pack</b></span></h3>
+<pre>
+wx.openCard({
+    cardList: [{
+        cardId: '',
+        code: ''
+    }]// List of coupons to be opened
+});
+</pre>
+<h2> <span class="mw-headline" id="Appendix_1:_Signature_Algorithm_for_the_JS-SDK_Using_Rights"><b>Appendix 1: Signature Algorithm for the JS-SDK Using Rights</b></span></h2>
+<p><b>jsapi_ticket</b>
+</p><p>Developers must retrieve a jsapi_ticket, the temporary ticket for the official account to call the WeChat JS APIs, before generating a signature. By default, <font color="red">the jsapi_ticket will be valid for 2 hours (7,200 seconds)</font>, and can be obtained via access_token. As there is a cap to  the number of API calls made for obtaining a jsapi_ticket, refreshing jsapi_ticket too frequently will result in disabled access and potentially affect your access to the API. Therefore, <font color="red">developers should globally cache jsapi_ticket on their own servers.</font>
+</p>
+<ol><li>Refer to the following document for obtaining access_token (<font color="red">validity period of 7,200 seconds; developers should globally cache access_token on their own servers</font>):<a href="index2e51.html?title=Access_token" class="external text" rel="nofollow">Access token</a>.
+</li><li>Obtain jsapi_ticket via HTTP GET method by using the access_token obtained in step 1 (<font color="red">validity period of 7,200 seconds; developers should globally cache jsapi_ticket on their own servers</font>):<a href="https://api.wechat.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi" class="external free" rel="nofollow">https://api.wechat.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi</a>.
+</li></ol>
+<p>The following JSON is an example of a successful reply:
+</p>
+<pre>
+{
+    &quot;errcode&quot;:0,
+    &quot;errmsg&quot;:&quot;ok&quot;,
+    &quot;ticket&quot;:&quot;bxLdikRXVbTPdHSM05e5u5sUoXNKd8-41ZO3MhKoyN5OfkWITDGgnr2fwJ0m9E8NYzWKVZvdVtaUgWvsdshFKA&quot;,
+    &quot;expires_in&quot;:7200
+}
+</pre>
+<p>After jsapi_ticket is obtained, signature for the JS-SDK API calls can be generated.
+</p><p><b>Signature Algorithm</b>
+</p><p>Signature generating rules are as follows: Fields included in the signature include noncestr (random string), a valid jsapi_ticket and timestamp, and url (URL of the current web page, <font color="red">excluding the URL fragment identifier # and its following parts</font>). After sorting all parameters used for signature in the ordered by each field names’ ASCII code from small to large (lexicographical order), divide string1 into key-value pairs (key1=value1&amp;key2=value2…). Note that all parameter names should be in lowercase. Apply SHA1 encryption on string1, adopting the original values of field name and field value without escaping the URL.
+</p><p>In short, signature=sha1(string1). Example:
+</p>
+<ul><li>noncestr=Wm3WZYTPz0wzccnW
+</li><li>jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg
+</li><li>timestamp=1414587457
+</li><li>url=<a href="http://admin.wechat.com/" class="external free" rel="nofollow">http://admin.wechat.com</a>
+</li></ul>
+<p>Step 1: After sorting all parameters used for the signature by the ASCII codes of field name from small to large (lexicographical order), divide string1 into key-value pairs (key1=value1&amp;key2=value2…):
+</p>
+<pre>
+jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg&amp;noncestr=Wm3WZYTPz0wzccnW&amp;timestamp=1414587457&amp;url=http://mp.weixin.qq.com
+</pre>
+<p>Step 2: Perform SHA1 encryption on string1 to obtain the signature:
+</p>
+<pre>
+f4d90daf4b3bca3078ab155816175ba34c443a7b
+</pre>
+<p>Caution:
+</p>
+<ol><li>The noncestr and timestamp parameters used for signature must be the same as those used  in wx.config API.
+</li><li>The url parameter used for signature must be the complete URL of the JS API calling page(excluding the URL fragment identifier # and its following parts).
+</li><li><font color="red">For security considerations, developers must implement signature logic on their server</font>.
+</li></ol>
+<p>Consult Appendix 5 if an error due to an invalid signature occurs.
+</p>
+<h2> <span class="mw-headline" id="Appendix_2:_List_of_All_JS_APIs"><b>Appendix 2: List of All JS APIs</b></span></h2>
+<p>V1.0.0 APIs
+</p>
+<ul><li>onMenuShareTimeline
+</li><li>onMenuShareAppMessage
+</li><li>startRecord
+</li><li>stopRecord
+</li><li>onVoiceRecordEnd
+</li><li>playVoice
+</li><li>pauseVoice
+</li><li>stopVoice
+</li><li>onVoicePlayEnd
+</li><li>uploadVoice
+</li><li>downloadVoice
+</li><li>chooseImage
+</li><li>previewImage
+</li><li>uploadImage
+</li><li>downloadImage
+</li><li>translateVoice
+</li><li>getNetworkType
+</li><li>openLocation
+</li><li>getLocation
+</li><li>hideOptionMenu
+</li><li>showOptionMenu
+</li><li>hideMenuItems
+</li><li>showMenuItems
+</li><li>hideAllNonBaseMenuItem
+</li><li>showAllNonBaseMenuItem
+</li><li>closeWindow
+</li><li>scanQRCode
+</li><li>addCard
+</li><li>chooseCard
+</li><li>openCard
+</li></ul>
+<h2> <span class="mw-headline" id="Appendix_3:_List_of_All_Menu_Items"><b>Appendix 3: List of All Menu Items</b></span></h2>
+<p>Basic Menu
+</p>
+<ul><li>Report Abuse: "menuItem:exposeArticle"
+</li><li>Text Size: "menuItem:setFont"
+</li><li>Day Mode: "menuItem:dayMode"
+</li><li>Night Mode: "menuItem:nightMode"
+</li><li>Refresh: "menuItem:refresh"
+</li><li>View Official Account (Added): "menuItem:profile"
+</li><li>View Official Account (Non-added): "menuItem:addContact"
+</li></ul>
+<p>Share Menu
+</p>
+<ul><li>Send to Chat: "menuItem:share:appMessage"
+</li><li>Share on Moments: "menuItem:share:timeline"
+</li><li>Favorite: "menuItem:favorite"
+</li><li>Share on Facebook: "menuItem:share:facebook"
+</li></ul>
+<p>Secure Menu
+</p>
+<ul><li>Debug: "menuItem:jsDebug"
+</li><li>Edit Tag: "menuItem:editTag"
+</li><li>Delete: "menuItem:delete"
+</li><li>Copy URL: "menuItem:copyUrl"
+</li><li>Original Page: "menuItem:originPage"
+</li><li>Read Mode: "menuItem:readMode"
+</li><li>Open in Safari: "menuItem:openWithSafari"
+</li><li>Email: "menuItem:share:email"
+</li><li>Some Special Official Accounts: "menuItem:share:brand"
+</li></ul>
+<h2> <span class="mw-headline" id="Appendix_4:_Coupon_Extension_Field_and_Signature_Generation_Algorithm"><b>Appendix 4: Coupon Extension Field and Signature Generation Algorithm</b></span></h2>
+<p><b>Description of Coupon Extension Field “cardExt”</b>
+</p><p>As a JSON string, cardExt a JSON string providing unique information assigned by a merchant for a coupon. It includes the following fields:
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center">
+<tr>
+<th style="width:180px">Parameter
+</th>
+<th style="width:180px">Required
+</th>
+<th style="width:470px">Description
+</th></tr>
+<tr>
+<td> code
+</td>
+<td> No
+</td>
+<td> A code specific to the instance of the coupon, which can be received only once. <font color="red">It is required when use_custom_code is set to true, otherwise not required</font>.
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> No
+</td>
+<td> OpenID of the specified recipient, which can only be received by that user. <font color="red">It is required for coupons with bind_openid being true, otherwise not required</font>.
+</td></tr>
+<tr>
+<td> timestamp
+</td>
+<td> Yes
+</td>
+<td> Timestamp, indicating the number of seconds since 00:00:00 of January 1st, 1970 to the current time as generated by the Vendor , and converted to a character string.
+<p>It is imported after being generated by the Vendor.
+</p>
+</td></tr>
+<tr>
+<td> signature
+</td>
+<td> Yes
+</td>
+<td> Signature, which is generated by the Vendor based on parameters in this table according to the specified SHA1 mode. For the specific signature scheme, see the following description. It is imported after being generated by the Vendor in compliance with specifications.
+</td></tr>
+<tr>
+<td> balance
+</td>
+<td> No
+</td>
+<td> Lucky Money balance, in the unit of 0.01 yuan.<font color="red">The field is required for lucky money (LUCKY_MONEY) coupon types, otherwise not required</font>.
+</td></tr>
+</table>
+<p><b>Signature Description</b>
+</p>
+<ol><li>Sort values of appsecret (unique certificate password of a third-party user), timestamp, card_id, code, openid and balance in lexicographical order.
+</li><li>Join character strings of all parameters in to one string, and then perform SHA1 encryption to obtain the signature.
+</li><li>Timestamp in the signature must be consistent with that in card_ext.
+</li><li>If code=23456, timestamp=141231233, card_id=345667, and appsecret=456789, then signature=sha1(14123123323456345667456789)=4F76593A4245644FAE4E1BC940F6422A0C3EC03E.
+</li></ol>
+<p><b>Description of Coupon Signature cardSign</b>
+</p>
+<ol><li>Sort values of appsecret, app_id, location_id, times_tamp, nonce_str, card_id and card_type in lexicographical order.
+</li><li>Join character strings of all parameters in to one string, and then perform SHA1 encryption to obtain the cardSign.
+</li></ol>
+<h2> <span class="mw-headline" id="Appendix_5:_Common_Errors_and_Solutions"><b>Appendix 5: Common Errors and Solutions</b></span></h2>
+<p>Using “debug: true” when calling the config API can enable debugging mode and alert error information on the page. Common errors and solutions are as follows:
+</p>
+<ol><li>Invalid url domain: The domain name of the current page is not bound to the used appid. (One appid can bind to three valid domain names. For details, see 1.1.1.)
+</li><li>Invalid signature: It is recommended to check the following in order:
+<ol><li>Check whether the signature algorithm is correct.
+</li><li>Check whether nonceStr and timestamp in the config parameter are consistent with those used in the signature.
+</li><li>Check whether url is the complete URL of the page (with the wrong URL alerted), including query string parameters after '?' and excluding the URL fragment identifier '#' part.
+</li><li>Check whether appid in the config parameter is consistent with that used for obtaining jsapi_titicket.
+</li><li>Make sure that you have cached access_token and jsapi_ticket.
+</li><li><font color="red">Make sure that the URL used for signature is dynamically generated, in other words, not hardcoded. For generating a dynamic url, refer to the implementation code  in PHP in the instance code. If a static html page transfers the URL from the client to the server for signature via AJAX, the client side needs to use JavaScript to obtain the URL of the current page excluding the URL fragment identifier '#' part (code example: location.href.split('#')[0]). Once the page is shared, the WeChat client will add other parameters to the end of the URL, in this case, If the current URL is not dynamically obtained, signature of the shared page will fail.</font>
+</li></ol>
+</li><li>the permission value is offline verifying. This error is caused because config is not successfully executed, or the called JSAPI is not imported into the jsApiList parameter of config. It is recommended to check in the following order:
+<ol><li>Check whether config is correctly executed.
+</li><li>If the  APIs are to be called once the page has completely loaded, they must be called in the callback function of wx.ready API.
+</li><li>Check whether the jsApiList parameter of config includes the APIs you have called.
+</li></ol>
+</li><li>Permission denied:. The official account has no rights to use this API. (Some APIs may only be used only after being given access right.)
+</li><li>The Android user has cancelled sharing on Moments, but a sharing success message is still returned. (The WeChat Team is aware of this problem and will be fixed in Android V6.1.)
+</li><li>Sharing fails on both iOS and Android systems. (Check whether the official account has been verified. Only the verified official accounts have the right to relevant sharing APIs. For verified official accounts, check whether the relevant share-listening APIs are triggered in the callback function of wx.ready API.)
+</li><li>Some Android V6.0.2 clients fail to use the share-listening API. (This problem does not apply to versions earlier than Android V6.0.2 or later than V6.0.2.58. Please download the latest version from weixin.qq.com.)
+</li><li>Developers fail to obtain jsapi_ticket after services go live, but the previous test succeeds. (Developers must cache access_token and jsapi_ticket on their own servers; otherwise, frequency cap will be triggered after services go live. Please be sure to cache the token and ticket to reduce redundant server requests, as this will avert a frequency cap and also speeds up your services. A frequency cap of 10,000 calls is currently provided to facilitate testing, and services will not be available once this limit is reached. <font color="red">Be sure to globally cache access_token and jsapi_ticket before services go live, both of which will be valid for 2 hours (7,200 seconds). Otherwise, services will not be available once the frequency cap is triggered</font>.)
+</li><li>The API for uploading images is occasionally blocked in some Android versions. (This problem exists in Android V6.0.2, and it has been fixed in versions later than V6.0.2.58. Please download the latest version from the official website.)
+</li><li>How do you upload multiple images using uploadImage? (Image can only be uploaded one-at-a-time currently. To upload multiple images, call this API again after uploading the prior image.)
+</li><li>HttpGet in the sample code fails to support https. (This problem has been addressed on January 11, 2015. For the demo downloaded earlier than that day, please download the latest sample code.)
+</li><li>Image compression issue. The upload API in JS-SDK sets no limitation on the size of upload resources. (Compression support has been added to Android V6.0.2, and will be added to iOS V6.1.)
+</li><li>Locally selected images fail to be previewed. (No extra support is required because the chooseImage API supports preview.)
+</li><li>Invalid signature is displayed when jumping from URL a to URL b. (The URL used for generating the signature on the background is the current URL using JS-SDK, that is, URL b. Remember that the URL used for background signature must be the complete URL of the current page using JS-SDK excluding the URL fragment identifier '#' part.)
+</li><li>Are extra steps necessary for compatibility with earlier WeChat versions? (JS-SDK is compatible with earlier versions, without needing the developer to take extra steps. Note that some APIs newly introduced since V6.0.2 can only be called in later versions.)
+</li><li>config:fail. (This error is caused because the imported config parameter is incomplete. Make sure that appId, timestamp, nonceStr, signature, and jsApiList are correctly included.)
+</li><li>How do you download the multimedia resources uploaded to WeChat through the JS API to the developer's server? (Please see the remarks about uploadVoice and uploadImage in this document.)
+</li><li>The serverId that is uploaded through other devices can be successfully downloaded but fails to be played in Android. (This problem has been confirmed by WeChat Team and will be fixed in Android V6.1.)
+</li><li>Is the JS SDK available for subdomains whose parent domain has finished the binding? (Yes, it is fully available for the correct subdomains after their parent domain has finished the binding.)
+</li><li>Web page which is opened via Scanning QR Code in WeChat Android client will be closed after calling the scanQRCode API with scanning result returns directly. (This problem has been confirmed by WeChat Team and will be fixed in Android V6.1.)
+</li><li>External images outside WeChat Admin platform can not be shown in ios V6.1, but those from within WeChat Admin platform or WeChat server do not have this problem. (This problem has been confirmed by WeChat Team and will be fixed in ios V6.2.)
+</li><li>Multimedia resources uploaded from Android to WeChat server through JS -APISDK may have noises on the third-party server after being downloaded. (This problem has been confirmed by WeChat team and will be fixed.)
+</li><li>The JS APIs related to images and voices can only download the resources uploaded through JS API, but cannot download the resources uploaded through the multimedia background API. (This problem has been confirmed by WeChat team and will be fixed.)
+</li><li>Voice recording which is speex-filetype and uploaded via JS API can not be directly played in developer’s page. (This problem has been confirmed by WeChat team and will be fixed. Developers can download the amr-filetype version to their own servers via the WeChat multimedia API.)
+</li><li>Injection will fail if developer use the pushState feature of HTML5 which is not yet supported in WeChat Android client and it will be fixed in Android V6.2.
+</li></ol>
+<h2> <span class="mw-headline" id="Appendix_6:_Sample_Code"><b>Appendix 6: Sample Code</b></span></h2>
+<p><b>Sample Code:</b>
+</p><p><a href="http://admin.wechat.com/mpres/htmledition/res/jssdk_sample.zip" class="external text" rel="nofollow">jssdk_sample.zip</a>
+</p><p>Remark: Sample code implemented in PHP and provided for reference to developers. All developers <font color="red">must cache the retrieved access_token and jsapi_ticket</font> to avoid frequency caps.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 557/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key doc_wiki_ibg-wiki_ibg_:pcache:idhash:50-0!*!0!!en!*!edit=0 and timestamp 20150319193046 -->
+<div class="printfooter">
+Retrieved from "<a href="index0187.html?title=JS_SDK_DOCUMENT">http://admin.wechat.com/wiki/index.php?title=JS_SDK_DOCUMENT</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo_en_US.png);" href="index4875.html?title=Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				<form class="searchform">
+        <input type="text"   name="search" placeholder="Search Keywords [alt-s]" accesskey="s" class="searchform_text"/>
+        <input type="submit" name="fulltext" value="Search" title="Get page with keywords" class="searchform_btn"/>
+				</form>
+				
+<!-- New Developers Guide -->
+<div class="portal" id='p-New_Developers_Guide'>
+	<h5><span class="portal_arrow"></span>New Developers Guide</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Getting-Started"><a href="index48e2.html?title=Getting_Started">Getting Started</a></li>
+					<li id="n-Developers-Requirements"><a href="indexd0af.html?title=Developers_Requirements">Developers Requirements</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /New Developers Guide -->
+
+<!-- Basic Support -->
+<div class="portal" id='p-Basic_Support'>
+	<h5><span class="portal_arrow"></span>Basic Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Access-Token"><a href="index2e51.html?title=Access_token">Access Token</a></li>
+					<li id="n-IP-Address-List"><a href="index935a.html?title=IP_Address_List">IP Address List</a></li>
+					<li id="n-Return-Codes"><a href="indexde62.html?title=Return_Codes">Return Codes</a></li>
+					<li id="n-API-Call-Limits"><a href="indexbfdb.html?title=API_Call_Limits">API Call Limits</a></li>
+					<li id="n-Transferring-Multimedia-Files"><a href="indexf3da.html?title=Transferring_Multimedia_Files">Transferring Multimedia Files</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Basic Support -->
+
+<!-- Receiving Messages -->
+<div class="portal" id='p-Receiving_Messages'>
+	<h5><span class="portal_arrow"></span>Receiving Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Message-Authentication"><a href="index421d.html?title=Message_Authentication">Message Authentication</a></li>
+					<li id="n-Common-Messages"><a href="index59b0.html?title=Common_Messages">Common Messages</a></li>
+					<li id="n-Event-Messages"><a href="index9e93.html?title=Event_Messages">Event Messages</a></li>
+					<li id="n-Speech-Recognition-Messages"><a href="index4d03.html?title=Speech_Recognition_Messages">Speech Recognition Messages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Receiving Messages -->
+
+<!-- Sending Messages -->
+<div class="portal" id='p-Sending_Messages'>
+	<h5><span class="portal_arrow"></span>Sending Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Callback-Messages"><a href="index617a.html?title=Callback_Messages">Callback Messages</a></li>
+					<li id="n-Customer-Service-Messages"><a href="indexe6db.html?title=Customer_Service_Messages">Customer Service Messages</a></li>
+					<li id="n-Advanced-Broadcast-Interface"><a href="index7545.html?title=Advanced_Broadcast_Interface">Advanced Broadcast Interface</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sending Messages -->
+
+<!-- User Management -->
+<div class="portal" id='p-User_Management'>
+	<h5><span class="portal_arrow"></span>User Management</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Group-Management-API"><a href="index7545-2.html?title=Group_Management_API">Group Management API</a></li>
+					<li id="n-Name-Remarks"><a href="index977b.html?title=Name_Remarks">Name Remarks</a></li>
+					<li id="n-User-Profile"><a href="indexb767.html?title=User_Profile">User Profile</a></li>
+					<li id="n-Follower-List"><a href="indexada8.html?title=Follower_List">Follower List</a></li>
+					<li id="n-User-Location"><a href="indexbaa6.html?title=User_Location">User Location</a></li>
+					<li id="n-User-Profile-via-Web"><a href="index331c.html?title=User_Profile_via_Web">User Profile via Web</a></li>
+					<li id="n-Network-Status"><a href="indexe7cb.html?title=Network_Status">Network Status</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User Management -->
+
+<!-- User-defined Menu -->
+<div class="portal" id='p-User-defined_Menu'>
+	<h5><span class="portal_arrow"></span>User-defined Menu</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Create"><a href="indexb5c7.html?title=Create">Create</a></li>
+					<li id="n-Query"><a href="indexfd99.html?title=Query">Query</a></li>
+					<li id="n-Delete"><a href="index9a86.html?title=Delete">Delete</a></li>
+					<li id="n-Event"><a href="index650b.html?title=Event">Event</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User-defined Menu -->
+
+<!-- Promotion Support -->
+<div class="portal" id='p-Promotion_Support'>
+	<h5><span class="portal_arrow"></span>Promotion Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Generating-Parametric-QR-Code"><a href="index21b1.html?title=Generating_Parametric_QR_Code">Generating Parametric QR Code</a></li>
+					<li id="n-URL-Shortening-API"><a href="index49ae.html?title=URL_Shortening_API">URL Shortening API</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Promotion Support -->
+
+<!-- Data Statistics -->
+<div class="portal" id='p-Data_Statistics'>
+	<h5><span class="portal_arrow"></span>Data Statistics</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Followers-Data"><a href="index17c4.html?title=Followers_Data_API">Followers Data</a></li>
+					<li id="n-Rich-Media-Data"><a href="indexad50.html?title=Rich_Media_Data_API">Rich Media Data</a></li>
+					<li id="n-User-Sent-Messages-Data"><a href="index020e.html?title=Messages_Data_API">User-Sent Messages Data</a></li>
+					<li id="n-Callback-Data"><a href="index836e.html?title=Callback_Data_API">Callback Data</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Data Statistics -->
+
+<!-- Wechat JS-SDK -->
+<div class="portal" id='p-Wechat_JS-SDK'>
+	<h5><span class="portal_arrow"></span>Wechat JS-SDK</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wechat-JS-SDK-document"><a href="index0187.html?title=JS_SDK_DOCUMENT">Wechat JS-SDK document</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Wechat JS-SDK -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer">
+				<ul id="footer-places">
+                    <li id="footer-about"><a target="_blank" href="http://www.tencent.com/en-us/index.shtml">About Tencent</a>&nbsp;|&nbsp; </li>
+          <li id="footer-policy"> <a target="_blank" href="http://wechat.com/en/service_terms.html">Service Terms</a>&nbsp;|&nbsp;</li>
+          <li id="footer-contactus"><a  href="mailto:admin@wechat.com">Contact Us</a></li>
+        </ul>
+				
+				<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both">Copyright&nbsp;&copy; 2012-2015 Tencent. All Rights Reserved.</div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "JS_SDK_DOCUMENT", "wgTitle": "JS SDK DOCUMENT", "wgAction": "view", "wgArticleId": 50, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 157, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.119 secs. -->			</body>
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=JS_SDK_DOCUMENT by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:30 GMT -->
+</html>
+<!-- IBG, 2015-03-20 --><!-- so -->

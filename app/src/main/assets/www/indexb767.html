@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=User_Profile by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:15:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>User Profile - WeChat Official Account Admin Platform</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="http://admin.wechat.com/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="WeChat Official Account Admin Platform (en)" />
+<link rel="alternate" type="application/atom+xml" title="WeChat Official Account Admin Platform Atom feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadeb8e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-User_Profile skin-vector">
+		
+<!--网站头部-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<div class="headWrap">
+	<div class="header"  id="header">
+		<div class="headerContent">
+			<div class="left">
+      <a class="block" href="http://admin.wechat.com/wiki">
+        <img src="images/logo_en_US.png" alt="WeChat Official Account Admin Platform">
+      </a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>		
+</div>
+
+<div class="bottomnav">
+		<a href="http://admin.wechat.com/wiki" title="Log in" class="loginbtn" style=""></a>
+			<a class="topbtn" href="javascript:;" onclick="document.getElementById('header').scrollIntoView(true);"></a>
+</div>
+<script type="text/javascript" src="js/wiki_en_US4bcb.js?20120215"></script>
+<!--[if IE 6]>
+<style type="text/css">
+html{background-image:url(about:blank);background-attachment:fixed;}
+#content{overflow-x:hidden;}
+.bottomnav{position:absolute;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-30));}
+</style>
+<![endif]-->
+<!--网站头部-->
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div class="mainwrapper">
+		<!-- content -->
+		<div id="content">
+      			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+        <h1 id="firstHeading" class="firstHeading">User Profile<div><a href="javascript:;" onclick="document.referrer ?location.replace(document.referrer):location.href='index4875.html';return false;" class="back">Back</a></div></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent" class="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From WeChat Official Account Admin Platform</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>When a follower and an official account have corresponded by message, the official account can receive the follower's OpenID. The OpenID is a unique encrypted WeChat ID for each user of an official account, and users can have separate OpenIDs corresponding to different official accounts. This API enables official accounts to obtain the user's basic information via the OpenID including nickname, profile photo, gender, city, language and the time that the user follows the official account.
+</p>
+<h2> <span class="mw-headline" id="Obtain_User_Basic_Information"><b>Obtain User Basic Information</b></span></h2>
+<p>Developers can obtain users' basic information from OpenIDs using the Https protocol.
+</p><p><b>Request Parameter</b>
+</p>
+<pre>HTTP request method: GET 
+<a href="https://api.wechat.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN" class="external free" rel="nofollow">https://api.wechat.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</a>
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th style="width:120px">Required
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> Yes
+</td>
+<td> The certificate for the calling API
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> Yes
+</td>
+<td> Unique user ID for the official account
+</td></tr>
+<tr>
+<td> lang
+</td>
+<td> Yes
+</td>
+<td> zh_CN: Simplified Chinese, zh_TW: Traditional Chinese, en: English
+</td></tr>
+
+</table>
+<p><b>Return Description</b>
+</p><p>An example of a successful JSON response is as follows:
+</p>
+<pre>{
+    "subscribe": 1, 
+    "openid": "o6_bmjrPTlm6_2sgVt7hMZOPfL2M", 
+    "nickname": "Band", 
+    "sex": 1, 
+    "language": "zh_CN", 
+    "city": "Guangzhou", 
+    "province": "Guangdong", 
+    "country": "China", 
+    "headimgurl":    "<a href="http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0" class="external free" rel="nofollow">http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0</a>", 
+   "subscribe_time": 1382694957
+}
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> subscribe
+</td>
+<td> Shows whether the user has followed the official account. 0: The user is not a follower, and you cannot obtain other information about this user.
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> Unique user ID for the official account
+</td></tr>
+<tr>
+<td> nickname
+</td>
+<td> User nickname
+</td></tr>
+<tr>
+<td> sex
+</td>
+<td> 1: Male; 2: Female; 0: Not Set
+</td></tr>
+<tr>
+<td> city
+</td>
+<td> City
+</td></tr>
+<tr>
+<td> country
+</td>
+<td> Country
+</td></tr>
+<tr>
+<td> province
+</td>
+<td> Province
+</td></tr>
+<tr>
+<td> language
+</td>
+<td> zh_CN: Simplified Chinese
+</td></tr>
+<tr>
+<td> headimgurl
+</td>
+<td> Profile photo URL. The last number in the URL shows the size of the square image, which can be 0 (640*640), 46, 64, 96 and 132. This parameter is null if the user hasn't set a profile photo
+</td></tr>
+<tr>
+<td> subscribe_time
+</td>
+<td> The timestamp when the user follows the official account or the last time if the user has followed several times
+</td></tr>
+</table>
+<p>An example of an unsuccessful JSON response (caused by invalid AppID) is as follows:
+</p>
+<pre>{"errcode":40013,"errmsg":"invalid appid"}
+</pre>
+<p><a href="indexde62.html?title=Return_Codes" class="external text" rel="nofollow">Return Codes</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 3/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key doc_wiki_ibg-wiki_ibg_:pcache:idhash:36-0!*!0!!*!*!edit=0 and timestamp 20150319151458 -->
+<div class="printfooter">
+Retrieved from "<a href="indexb767.html?title=User_Profile">http://admin.wechat.com/wiki/index.php?title=User_Profile</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo_en_US.png);" href="index4875.html?title=Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				<form class="searchform">
+        <input type="text"   name="search" placeholder="Search Keywords [alt-s]" accesskey="s" class="searchform_text"/>
+        <input type="submit" name="fulltext" value="Search" title="Get page with keywords" class="searchform_btn"/>
+				</form>
+				
+<!-- New Developers Guide -->
+<div class="portal" id='p-New_Developers_Guide'>
+	<h5><span class="portal_arrow"></span>New Developers Guide</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Getting-Started"><a href="index48e2.html?title=Getting_Started">Getting Started</a></li>
+					<li id="n-Developers-Requirements"><a href="indexd0af.html?title=Developers_Requirements">Developers Requirements</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /New Developers Guide -->
+
+<!-- Basic Support -->
+<div class="portal" id='p-Basic_Support'>
+	<h5><span class="portal_arrow"></span>Basic Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Access-Token"><a href="index2e51.html?title=Access_token">Access Token</a></li>
+					<li id="n-IP-Address-List"><a href="index935a.html?title=IP_Address_List">IP Address List</a></li>
+					<li id="n-Return-Codes"><a href="indexde62.html?title=Return_Codes">Return Codes</a></li>
+					<li id="n-API-Call-Limits"><a href="indexbfdb.html?title=API_Call_Limits">API Call Limits</a></li>
+					<li id="n-Transferring-Multimedia-Files"><a href="indexf3da.html?title=Transferring_Multimedia_Files">Transferring Multimedia Files</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Basic Support -->
+
+<!-- Receiving Messages -->
+<div class="portal" id='p-Receiving_Messages'>
+	<h5><span class="portal_arrow"></span>Receiving Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Message-Authentication"><a href="index421d.html?title=Message_Authentication">Message Authentication</a></li>
+					<li id="n-Common-Messages"><a href="index59b0.html?title=Common_Messages">Common Messages</a></li>
+					<li id="n-Event-Messages"><a href="index9e93.html?title=Event_Messages">Event Messages</a></li>
+					<li id="n-Speech-Recognition-Messages"><a href="index4d03.html?title=Speech_Recognition_Messages">Speech Recognition Messages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Receiving Messages -->
+
+<!-- Sending Messages -->
+<div class="portal" id='p-Sending_Messages'>
+	<h5><span class="portal_arrow"></span>Sending Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Callback-Messages"><a href="index617a.html?title=Callback_Messages">Callback Messages</a></li>
+					<li id="n-Customer-Service-Messages"><a href="indexe6db.html?title=Customer_Service_Messages">Customer Service Messages</a></li>
+					<li id="n-Advanced-Broadcast-Interface"><a href="index7545.html?title=Advanced_Broadcast_Interface">Advanced Broadcast Interface</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sending Messages -->
+
+<!-- User Management -->
+<div class="portal" id='p-User_Management'>
+	<h5><span class="portal_arrow"></span>User Management</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Group-Management-API"><a href="index7545-2.html?title=Group_Management_API">Group Management API</a></li>
+					<li id="n-Name-Remarks"><a href="index977b.html?title=Name_Remarks">Name Remarks</a></li>
+					<li id="n-User-Profile"><a href="indexb767.html?title=User_Profile">User Profile</a></li>
+					<li id="n-Follower-List"><a href="indexada8.html?title=Follower_List">Follower List</a></li>
+					<li id="n-User-Location"><a href="indexbaa6.html?title=User_Location">User Location</a></li>
+					<li id="n-User-Profile-via-Web"><a href="index331c.html?title=User_Profile_via_Web">User Profile via Web</a></li>
+					<li id="n-Network-Status"><a href="indexe7cb.html?title=Network_Status">Network Status</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User Management -->
+
+<!-- User-defined Menu -->
+<div class="portal" id='p-User-defined_Menu'>
+	<h5><span class="portal_arrow"></span>User-defined Menu</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Create"><a href="indexb5c7.html?title=Create">Create</a></li>
+					<li id="n-Query"><a href="indexfd99.html?title=Query">Query</a></li>
+					<li id="n-Delete"><a href="index9a86.html?title=Delete">Delete</a></li>
+					<li id="n-Event"><a href="index650b.html?title=Event">Event</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User-defined Menu -->
+
+<!-- Promotion Support -->
+<div class="portal" id='p-Promotion_Support'>
+	<h5><span class="portal_arrow"></span>Promotion Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Generating-Parametric-QR-Code"><a href="index21b1.html?title=Generating_Parametric_QR_Code">Generating Parametric QR Code</a></li>
+					<li id="n-URL-Shortening-API"><a href="index49ae.html?title=URL_Shortening_API">URL Shortening API</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Promotion Support -->
+
+<!-- Data Statistics -->
+<div class="portal" id='p-Data_Statistics'>
+	<h5><span class="portal_arrow"></span>Data Statistics</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Followers-Data"><a href="index17c4.html?title=Followers_Data_API">Followers Data</a></li>
+					<li id="n-Rich-Media-Data"><a href="indexad50.html?title=Rich_Media_Data_API">Rich Media Data</a></li>
+					<li id="n-User-Sent-Messages-Data"><a href="index020e.html?title=Messages_Data_API">User-Sent Messages Data</a></li>
+					<li id="n-Callback-Data"><a href="index836e.html?title=Callback_Data_API">Callback Data</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Data Statistics -->
+
+<!-- Wechat JS-SDK -->
+<div class="portal" id='p-Wechat_JS-SDK'>
+	<h5><span class="portal_arrow"></span>Wechat JS-SDK</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wechat-JS-SDK-document"><a href="index0187.html?title=JS_SDK_DOCUMENT">Wechat JS-SDK document</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Wechat JS-SDK -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer">
+				<ul id="footer-places">
+                    <li id="footer-about"><a target="_blank" href="http://www.tencent.com/en-us/index.shtml">About Tencent</a>&nbsp;|&nbsp; </li>
+          <li id="footer-policy"> <a target="_blank" href="http://wechat.com/en/service_terms.html">Service Terms</a>&nbsp;|&nbsp;</li>
+          <li id="footer-contactus"><a  href="mailto:admin@wechat.com">Contact Us</a></li>
+        </ul>
+				
+				<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both">Copyright&nbsp;&copy; 2012-2015 Tencent. All Rights Reserved.</div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "User_Profile", "wgTitle": "User Profile", "wgAction": "view", "wgArticleId": 36, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 101, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.111 secs. -->			</body>
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=User_Profile by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:15:45 GMT -->
+</html>
+<!-- IBG, 2015-03-20 --><!-- so -->

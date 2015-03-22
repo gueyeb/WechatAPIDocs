@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=User_Profile_via_Web by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:15:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>User Profile via Web - WeChat Official Account Admin Platform</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="http://admin.wechat.com/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="WeChat Official Account Admin Platform (en)" />
+<link rel="alternate" type="application/atom+xml" title="WeChat Official Account Admin Platform Atom feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadeb8e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-User_Profile_via_Web skin-vector">
+		
+<!--网站头部-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<div class="headWrap">
+	<div class="header"  id="header">
+		<div class="headerContent">
+			<div class="left">
+      <a class="block" href="http://admin.wechat.com/wiki">
+        <img src="images/logo_en_US.png" alt="WeChat Official Account Admin Platform">
+      </a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>		
+</div>
+
+<div class="bottomnav">
+		<a href="http://admin.wechat.com/wiki" title="Log in" class="loginbtn" style=""></a>
+			<a class="topbtn" href="javascript:;" onclick="document.getElementById('header').scrollIntoView(true);"></a>
+</div>
+<script type="text/javascript" src="js/wiki_en_US4bcb.js?20120215"></script>
+<!--[if IE 6]>
+<style type="text/css">
+html{background-image:url(about:blank);background-attachment:fixed;}
+#content{overflow-x:hidden;}
+.bottomnav{position:absolute;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-30));}
+</style>
+<![endif]-->
+<!--网站头部-->
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div class="mainwrapper">
+		<!-- content -->
+		<div id="content">
+      			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+        <h1 id="firstHeading" class="firstHeading">User Profile via Web<div><a href="javascript:;" onclick="document.referrer ?location.replace(document.referrer):location.href='index4875.html';return false;" class="back">Back</a></div></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent" class="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From WeChat Official Account Admin Platform</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>Developers can obtain a user's profile information or execute service logic via this API when a user visits a third-party web page for an official account on WeChat.
+</p><p><b>Web-based Authorization Callback Domain Name</b>
+</p>
+<pre>1. Before requesting a user's web-based authorization, the developer should configure an authorization callback domain name on the WeChat Official Account Admin Platform (<font color="red">Developer Center &gt; API Privileges &gt; OAuth2.0 Web authorization</font>). Note that a domain name (string type), not a URL should be entered, so do not add <a href="http://" class="external free" rel="nofollow">http://</a>.
+2. The callback domain name must be set to a complete domain name. For example, if the domain name is www.qq.com, after configuration, URLs under this domain name including <a href="http://www.qq.com/music.html" class="external free" rel="nofollow">http://www.qq.com/music.html</a> and <a href="http://www.qq.com/login.html" class="external free" rel="nofollow">http://www.qq.com/login.html</a> would be able to support WeChat OAuth2.0-based authentication. However, <a href="http://pay.qq.com/" class="external free" rel="nofollow">http://pay.qq.com</a>, <a href="http://music.qq.com/" class="external free" rel="nofollow">http://music.qq.com</a>, and <a href="http://qq.com/" class="external free" rel="nofollow">http://qq.com</a> would not be supported for web-based authentication.
+3. If an official account authorizes a third-party to manage web-based authentication, the official account does not need any setting.
+</pre>
+<p><b>Scope Setting</b>
+</p>
+<pre>1. If scope is set to snsapi_base, only a user's OpenID may be obtained. The authorization will occur silently and redirection page occurs automatically. In this case, users will be automatically redirected to the configured callback page (business page).
+2. If scope is set to snsapi_userinfo, a user's basic information may be obtained. However, users must first confirm their authorization. After users give permission, developers can obtain the user's basic information.
+3. Note that the "User Profile" API obtains a user's profile information based on their OpenID only after the user and the official account have exchanged messages or the user has followed the official account. The "User Profile" API and many other API calls may only be called after a user has followed the official account. 
+</pre>
+<p><b>Web Authorization Access Token and Common Access Token</b>
+</p>
+<pre>1. Web authorization done via the OAuth 2.0 protocol. After a user has given permission, the official account will receive a special API calling certificate (web authorization access_token). Based on this access token, the official account may call APIs and obtain the user's basic information.
+2. If other APIs are to be called, a common access_token must be first obtained by calling the "Access Token" API on Basic Support.
+</pre>
+<p><b>Silent Authorization</b>
+</p>
+<pre>1. Silent authorization is used when the authentication scope is set to snsapi_base. Users will be unaffected by silent authorization.
+2. When users have followed an official account and enter the authorization webpage of this official account via its chat window or custom menu, silent authorization will prevail over manual authorization even when the authorization scope is set to snsapi_userinfo.
+</pre>
+<p>Web-based authorization is as follows:
+</p>
+<pre>1. Direct users to a web-based authorization page to obtain a user's authorization. Authorization results in a code.
+2. After user authorization is provided, receive a web authorization access token based on the code (not the one mentioned in the Basic Support pages).
+3. Update the web authorization access token if required. 
+4. Obtain user information based on the web authorization access token and OpenID. 
+</pre>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Get_a_code"><span class="tocnumber">1</span> <span class="toctext">Get a code</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Obtain_access_token_by_the_code"><span class="tocnumber">2</span> <span class="toctext">Obtain access token by the code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Update_the_access_token_if_required"><span class="tocnumber">3</span> <span class="toctext">Update the access token if required</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Obtain_user_info_.28scope.3Dsnsapi_userinfo.29"><span class="tocnumber">4</span> <span class="toctext">Obtain user info (scope=snsapi_userinfo)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Appendix:_Verifying_an_Access_Token"><span class="tocnumber">5</span> <span class="toctext">Appendix: Verifying an Access Token</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Get_a_code"><b>Get a code</b></span></h2>
+<p>Ensure that the official account has the permissions for the authorization scope (the scope parameter). The default scope parameter includes snsapi_base and snsapi_userinfo when a service account has advanced APIs. Then guide the user to open the link below:
+</p>
+<pre><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=SCOPE&amp;state=STATE#wechat_redirect" class="external free" rel="nofollow">https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=SCOPE&amp;state=STATE#wechat_redirect</a>
+</pre>
+<p>If you cannot open this link, check whether the parameters are correct and you have the permission for the scope parameter.
+</p><p>Two links are provided below for your reference (please open them in your WeChat client)
+</p>
+<pre>Scope = snsapi_base
+<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387&amp;redirect_uri=http%3A%2F%2Fchong.qq.com%2Fphp%2Findex.php%3Fd%3D%26c%3DwxAdapter%26m%3DmobileDeal%26showwxpaytitle%3D1%26vb2ctag%3D4_2030_5_1194_60&amp;response_type=code&amp;scope=snsapi_base&amp;state=123#wechat_redirect" class="external free" rel="nofollow">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387&amp;redirect_uri=http%3A%2F%2Fchong.qq.com%2Fphp%2Findex.php%3Fd%3D%26c%3DwxAdapter%26m%3DmobileDeal%26showwxpaytitle%3D1%26vb2ctag%3D4_2030_5_1194_60&amp;response_type=code&amp;scope=snsapi_base&amp;state=123#wechat_redirect</a>
+Scope = snsapi_userinfo
+<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf0e81c3bee622d60&amp;redirect_uri=http%3A%2F%2Fnba.bluewebgame.com%2Foauth_response.php&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect" class="external free" rel="nofollow">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf0e81c3bee622d60&amp;redirect_uri=http%3A%2F%2Fnba.bluewebgame.com%2Foauth_response.php&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect</a>
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th style="width:120px">Required
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> appid
+</td>
+<td> Yes
+</td>
+<td> The unique ID of the official account
+</td></tr>
+<tr>
+<td> redirect_uri
+</td>
+<td> Yes
+</td>
+<td> Callback redirection URL after authorization
+</td></tr>
+<tr>
+<td> response_type
+</td>
+<td> Yes
+</td>
+<td> Code
+</td></tr>
+<tr>
+<td> scope
+</td>
+<td> Yes
+</td>
+<td> App authorization scope. snsapi_base: No authorization page is prompted, redirect occurs, and only the user OpenID can be obtained.
+<p>snsapi_userinfo: prompts the authorization page, enabling you to obtain a user's nickname, gender and city via the OpenID. For a non-follower, you can also obtain information if the user gives permission.
+</p>
+</td></tr>
+<tr>
+<td> state
+</td>
+<td> No
+</td>
+<td> This parameter is included in the link after redirection. The developer can set a random value.
+</td></tr>
+<tr>
+<td> #wechat_redirect
+</td>
+<td> No
+</td>
+<td> This parameter can be left empty when opening the link in WeChat. This parameter is required for 302 redirection.
+</td></tr>
+</table>
+<p>An example of the authorization page when the scope parameter is equal to the snsapi_userinfo is as follows:
+</p><p><a href="indexeb13.html?title=File:3.jpg" class="image"><img alt="3.jpg" src="images/thumb/7/79/3.jpg/287px-3.jpg" width="287" height="430" /></a>
+</p><p>If the user gives authorization permission, the page redirects to redirect_uri/?code=CODE&amp;state=STATE. Otherwise, only the state parameter is included in the URL, such as redirect_uri?state=STATE.
+</p>
+<pre>Code description: 
+The code is the certificate for obtaining the access token and is therefore different for each authorization. A code can only be used once and expires after 5 minutes if it is not used.
+</pre>
+<h2> <span class="mw-headline" id="Obtain_access_token_by_the_code"><b>Obtain access token by the code</b></span></h2>
+<p>Note that the access token here for web authorization obtained by the code is not the one mentioned in the Basis Support pages. If the scope parameter is snsapi_base, both access token and OpenID are obtained in this step. 
+</p><p><b>Request Description</b>
+</p>
+<pre>Request the following link to obtain access token after you receive the code:
+<a href="https://api.wechat.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code" class="external free" rel="nofollow">https://api.wechat.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code</a>
+</pre>
+<p><br />
+<b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th style="width:120px">Required
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> appid
+</td>
+<td> Yes
+</td>
+<td> The unique ID of the official account
+</td></tr>
+<tr>
+<td> secret
+</td>
+<td> Yes
+</td>
+<td> The appsecret of the official account
+</td></tr>
+<tr>
+<td> code
+</td>
+<td> Yes
+</td>
+<td> The code parameter obtained in the first step
+</td></tr>
+<tr>
+<td> grant_type
+</td>
+<td> Yes
+</td>
+<td> authorization_code
+</td></tr>
+</table>
+<p><b>Return Description</b>
+</p><p>An example of a successful json response is as follows:
+</p>
+<pre>{
+   "access_token":"ACCESS_TOKEN",
+   "expires_in":7200,
+   "refresh_token":"REFRESH_TOKEN",
+   "openid":"OPENID",
+   "scope":"SCOPE"
+}
+</pre>
+<p><br />
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> The certificate for calling the web authorization API. Note: this access token is not the one mentioned in the Basis Support pages.
+</td></tr>
+<tr>
+<td> expires_in
+</td>
+<td> The certificate validity time (unit: second)
+</td></tr>
+<tr>
+<td> refresh_token
+</td>
+<td> Update access token
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> The unique ID of the user.
+<p>Non-follower visiting the web pages of an official account can also generate a unique OpenID.
+</p>
+</td></tr>
+<tr>
+<td> scope
+</td>
+<td> User authorization scope, separated by comma (,)
+</td></tr>
+</table>
+<p>An example of an unsuccessful json response (caused by an invalid code) is as follows:
+</p>
+<pre>{"errcode":40029,"errmsg":"invalid code"}
+</pre>
+<p><a href="indexde62.html?title=Return_Codes" class="external text" rel="nofollow">Return Codes</a>
+</p>
+<h2> <span class="mw-headline" id="Update_the_access_token_if_required"><b>Update the access token if required</b></span></h2>
+<p>An access token is valid for a short period, but you can update it on expiry using refresh_token. A refresh_token can be valid for 7/30/60/90 days, and the user needs to perform authorization again after the refresh_token expires.
+</p><p><b>Request Description</b>
+</p>
+<pre>Request the following link to obtain access token after you get the refresh_token in the second step:
+<a href="https://api.wechat.com/sns/oauth2/refresh_token?appid=APPID&amp;grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN" class="external free" rel="nofollow">https://api.wechat.com/sns/oauth2/refresh_token?appid=APPID&amp;grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN</a>
+</pre>
+<p><br />
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th style="width:120px">Required
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> appid
+</td>
+<td> Yes
+</td>
+<td> The unique ID of the official account
+</td></tr>
+<tr>
+<td> grant_type
+</td>
+<td> Yes
+</td>
+<td> refresh_token
+</td></tr>
+<tr>
+<td> refresh_token
+</td>
+<td> Yes
+</td>
+<td> The refresh token obtained by the access token
+</td></tr>
+</table>
+<p><b>Return Description</b>
+An example of a successful json response is as follows:
+</p>
+<pre>{
+   "access_token":"ACCESS_TOKEN",
+   "expires_in":7200,
+   "refresh_token":"REFRESH_TOKEN",
+   "openid":"OPENID",
+   "scope":"SCOPE"
+}
+</pre>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> The certificate for calling the web authorization API. Note: this access token is not the one mentioned in the Basis Support pages.
+</td></tr>
+<tr>
+<td> expires_in
+</td>
+<td> The validity time of the certificate (unit: second)
+</td></tr>
+<tr>
+<td> refresh token
+</td>
+<td> Update access token
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> The unique ID of the user
+</td></tr>
+<tr>
+<td> scope
+</td>
+<td> User authorization scope, which is separated by a comma (,)
+</td></tr>
+</table>
+<p>An example of an unsuccessful json response (caused by an invalid code) is as follows:
+</p>
+<pre>{"errcode":40029,"errmsg":"invalid code"}
+</pre>
+<p><a href="indexde62.html?title=Return_Codes" class="external text" rel="nofollow">Return Codes</a>
+</p>
+<h2> <span class="mw-headline" id="Obtain_user_info_.28scope.3Dsnsapi_userinfo.29"><b>Obtain user info (scope=snsapi_userinfo)</b></span></h2>
+<p>If the scope is snsapi_userinfo, the developer can obtain user info using the access token and OpenID.
+</p><p><b>Request Description</b>
+</p>
+<pre>HTTP request method: GET (Use Https protocol)
+<a href="https://api.wechat.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID" class="external free" rel="nofollow">https://api.wechat.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID</a>
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> The certificate for calling the web authorization API. Note: this access token is not the one mentioned in the Basis Support pages.
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> The unique ID of the user
+</td></tr>
+</table>
+<p><b>Return Description</b>
+An example of a successful json response is as follows:
+</p>
+<pre>{
+   "openid":" OPENID",
+   " nickname": NICKNAME,
+   "sex":"1",
+   "province":"PROVINCE"
+   "city":"CITY",
+   "country":"COUNTRY",
+   "headimgurl":    "<a href="http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/46" class="external free" rel="nofollow">http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/46</a>", 
+   "privilege":[
+   "PRIVILEGE1"
+   "PRIVILEGE2"
+   ]
+}
+</pre>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> openid
+</td>
+<td> The unique ID of the user
+</td></tr>
+<tr>
+<td> nickname
+</td>
+<td> User's nickname
+</td></tr>
+<tr>
+<td> sex
+</td>
+<td>
+<p>1: Male
+2: Female
+0: Not set
+</p>
+</td></tr>
+<tr>
+<td> province
+</td>
+<td> Province
+</td></tr>
+<tr>
+<td> city
+</td>
+<td> City
+</td></tr>
+<tr>
+<td> country
+</td>
+<td> Country
+</td></tr>
+<tr>
+<td> headimgurl
+</td>
+<td> Profile photo URL. The last number in the URL shows the size of the square image, which can be 0 (640*640), 46, 64, 96 and 132. This parameter is null if the user hasn't set a profile photo.
+</td></tr>
+<tr>
+<td> privilege
+</td>
+<td> User privilege information in the Json array format, such as "chinaunicom" for WeChat WO users
+</td></tr>
+</table>
+<p>An example of an unsuccessful json response (caused by invalid OpenID) is as follows:
+</p>
+<pre>{"errcode":40003,"errmsg":" invalid openid "}
+</pre>
+<p><a href="indexde62.html?title=Return_Codes" class="external text" rel="nofollow">Return Codes</a>
+</p>
+<h2> <span class="mw-headline" id="Appendix:_Verifying_an_Access_Token"><b>Appendix: Verifying an Access Token</b></span></h2>
+<p><b>Request Method</b>
+</p>
+<pre>http: GET (using HTTPS protocol)
+<a href="https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&amp;openid=OPENID" class="external free" rel="nofollow">https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&amp;openid=OPENID</a>
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> Access token providing authorization for calling web-based authorization. Note: this access token is not the one mentioned in the Basic Support pages.
+</td></tr>
+<tr>
+<td> openid
+</td>
+<td> A unique ID of the user specific to the official account.
+</td></tr>
+</table>
+<p><b>Return Description</b>
+An example of a successful JSON response is as follows:
+</p>
+<pre>{ "errcode":0,"errmsg":"ok"}
+</pre>
+<p>An example of an unsuccessful JSON response is as follows: 
+</p>
+<pre>{ "errcode":40003,"errmsg":"invalid openid"}
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 20/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key doc_wiki_ibg-wiki_ibg_:pcache:idhash:39-0!*!0!!en!2!edit=0 and timestamp 20150319062820 -->
+<div class="printfooter">
+Retrieved from "<a href="index331c.html?title=User_Profile_via_Web">http://admin.wechat.com/wiki/index.php?title=User_Profile_via_Web</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo_en_US.png);" href="index4875.html?title=Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				<form class="searchform">
+        <input type="text"   name="search" placeholder="Search Keywords [alt-s]" accesskey="s" class="searchform_text"/>
+        <input type="submit" name="fulltext" value="Search" title="Get page with keywords" class="searchform_btn"/>
+				</form>
+				
+<!-- New Developers Guide -->
+<div class="portal" id='p-New_Developers_Guide'>
+	<h5><span class="portal_arrow"></span>New Developers Guide</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Getting-Started"><a href="index48e2.html?title=Getting_Started">Getting Started</a></li>
+					<li id="n-Developers-Requirements"><a href="indexd0af.html?title=Developers_Requirements">Developers Requirements</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /New Developers Guide -->
+
+<!-- Basic Support -->
+<div class="portal" id='p-Basic_Support'>
+	<h5><span class="portal_arrow"></span>Basic Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Access-Token"><a href="index2e51.html?title=Access_token">Access Token</a></li>
+					<li id="n-IP-Address-List"><a href="index935a.html?title=IP_Address_List">IP Address List</a></li>
+					<li id="n-Return-Codes"><a href="indexde62.html?title=Return_Codes">Return Codes</a></li>
+					<li id="n-API-Call-Limits"><a href="indexbfdb.html?title=API_Call_Limits">API Call Limits</a></li>
+					<li id="n-Transferring-Multimedia-Files"><a href="indexf3da.html?title=Transferring_Multimedia_Files">Transferring Multimedia Files</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Basic Support -->
+
+<!-- Receiving Messages -->
+<div class="portal" id='p-Receiving_Messages'>
+	<h5><span class="portal_arrow"></span>Receiving Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Message-Authentication"><a href="index421d.html?title=Message_Authentication">Message Authentication</a></li>
+					<li id="n-Common-Messages"><a href="index59b0.html?title=Common_Messages">Common Messages</a></li>
+					<li id="n-Event-Messages"><a href="index9e93.html?title=Event_Messages">Event Messages</a></li>
+					<li id="n-Speech-Recognition-Messages"><a href="index4d03.html?title=Speech_Recognition_Messages">Speech Recognition Messages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Receiving Messages -->
+
+<!-- Sending Messages -->
+<div class="portal" id='p-Sending_Messages'>
+	<h5><span class="portal_arrow"></span>Sending Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Callback-Messages"><a href="index617a.html?title=Callback_Messages">Callback Messages</a></li>
+					<li id="n-Customer-Service-Messages"><a href="indexe6db.html?title=Customer_Service_Messages">Customer Service Messages</a></li>
+					<li id="n-Advanced-Broadcast-Interface"><a href="index7545.html?title=Advanced_Broadcast_Interface">Advanced Broadcast Interface</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sending Messages -->
+
+<!-- User Management -->
+<div class="portal" id='p-User_Management'>
+	<h5><span class="portal_arrow"></span>User Management</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Group-Management-API"><a href="index7545-2.html?title=Group_Management_API">Group Management API</a></li>
+					<li id="n-Name-Remarks"><a href="index977b.html?title=Name_Remarks">Name Remarks</a></li>
+					<li id="n-User-Profile"><a href="indexb767.html?title=User_Profile">User Profile</a></li>
+					<li id="n-Follower-List"><a href="indexada8.html?title=Follower_List">Follower List</a></li>
+					<li id="n-User-Location"><a href="indexbaa6.html?title=User_Location">User Location</a></li>
+					<li id="n-User-Profile-via-Web"><a href="index331c.html?title=User_Profile_via_Web">User Profile via Web</a></li>
+					<li id="n-Network-Status"><a href="indexe7cb.html?title=Network_Status">Network Status</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User Management -->
+
+<!-- User-defined Menu -->
+<div class="portal" id='p-User-defined_Menu'>
+	<h5><span class="portal_arrow"></span>User-defined Menu</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Create"><a href="indexb5c7.html?title=Create">Create</a></li>
+					<li id="n-Query"><a href="indexfd99.html?title=Query">Query</a></li>
+					<li id="n-Delete"><a href="index9a86.html?title=Delete">Delete</a></li>
+					<li id="n-Event"><a href="index650b.html?title=Event">Event</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User-defined Menu -->
+
+<!-- Promotion Support -->
+<div class="portal" id='p-Promotion_Support'>
+	<h5><span class="portal_arrow"></span>Promotion Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Generating-Parametric-QR-Code"><a href="index21b1.html?title=Generating_Parametric_QR_Code">Generating Parametric QR Code</a></li>
+					<li id="n-URL-Shortening-API"><a href="index49ae.html?title=URL_Shortening_API">URL Shortening API</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Promotion Support -->
+
+<!-- Data Statistics -->
+<div class="portal" id='p-Data_Statistics'>
+	<h5><span class="portal_arrow"></span>Data Statistics</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Followers-Data"><a href="index17c4.html?title=Followers_Data_API">Followers Data</a></li>
+					<li id="n-Rich-Media-Data"><a href="indexad50.html?title=Rich_Media_Data_API">Rich Media Data</a></li>
+					<li id="n-User-Sent-Messages-Data"><a href="index020e.html?title=Messages_Data_API">User-Sent Messages Data</a></li>
+					<li id="n-Callback-Data"><a href="index836e.html?title=Callback_Data_API">Callback Data</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Data Statistics -->
+
+<!-- Wechat JS-SDK -->
+<div class="portal" id='p-Wechat_JS-SDK'>
+	<h5><span class="portal_arrow"></span>Wechat JS-SDK</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wechat-JS-SDK-document"><a href="index0187.html?title=JS_SDK_DOCUMENT">Wechat JS-SDK document</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Wechat JS-SDK -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer">
+				<ul id="footer-places">
+                    <li id="footer-about"><a target="_blank" href="http://www.tencent.com/en-us/index.shtml">About Tencent</a>&nbsp;|&nbsp; </li>
+          <li id="footer-policy"> <a target="_blank" href="http://wechat.com/en/service_terms.html">Service Terms</a>&nbsp;|&nbsp;</li>
+          <li id="footer-contactus"><a  href="mailto:admin@wechat.com">Contact Us</a></li>
+        </ul>
+				
+				<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both">Copyright&nbsp;&copy; 2012-2015 Tencent. All Rights Reserved.</div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "User_Profile_via_Web", "wgTitle": "User Profile via Web", "wgAction": "view", "wgArticleId": 39, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 196, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.114 secs. -->			</body>
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=User_Profile_via_Web by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:15:59 GMT -->
+</html>
+<!-- IBG, 2015-03-20 --><!-- so -->

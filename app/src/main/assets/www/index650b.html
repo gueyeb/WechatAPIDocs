@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=Event by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Event - WeChat Official Account Admin Platform</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="http://admin.wechat.com/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="WeChat Official Account Admin Platform (en)" />
+<link rel="alternate" type="application/atom+xml" title="WeChat Official Account Admin Platform Atom feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadeb8e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Event skin-vector">
+		
+<!--网站头部-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<div class="headWrap">
+	<div class="header"  id="header">
+		<div class="headerContent">
+			<div class="left">
+      <a class="block" href="http://admin.wechat.com/wiki">
+        <img src="images/logo_en_US.png" alt="WeChat Official Account Admin Platform">
+      </a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>		
+</div>
+
+<div class="bottomnav">
+		<a href="http://admin.wechat.com/wiki" title="Log in" class="loginbtn" style=""></a>
+			<a class="topbtn" href="javascript:;" onclick="document.getElementById('header').scrollIntoView(true);"></a>
+</div>
+<script type="text/javascript" src="js/wiki_en_US4bcb.js?20120215"></script>
+<!--[if IE 6]>
+<style type="text/css">
+html{background-image:url(about:blank);background-attachment:fixed;}
+#content{overflow-x:hidden;}
+.bottomnav{position:absolute;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-30));}
+</style>
+<![endif]-->
+<!--网站头部-->
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div class="mainwrapper">
+		<!-- content -->
+		<div id="content">
+      			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+        <h1 id="firstHeading" class="firstHeading">Event<div><a href="javascript:;" onclick="document.referrer ?location.replace(document.referrer):location.href='index4875.html';return false;" class="back">Back</a></div></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent" class="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From WeChat Official Account Admin Platform</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>Clicking a clickable user-defined menu causes WeChat to push the click event to the developer. Clicking a view-only menu redirects the event to the URL but does not push.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pulling_a_Message_Event"><span class="tocnumber">1</span> <span class="toctext">Pulling a Message Event</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#URL_Redirection_Event"><span class="tocnumber">2</span> <span class="toctext">URL Redirection Event</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#scancode_push:_Scanning_Event"><span class="tocnumber">3</span> <span class="toctext">scancode_push: Scanning Event</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#scancode_waitmsg:_Scanning_and_Popping_up_.22receiving_message.22_Event"><span class="tocnumber">4</span> <span class="toctext">scancode_waitmsg: Scanning and Popping up "receiving message" Event</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#pic_sysphoto:_Popping_up_System_Camera_window_Event"><span class="tocnumber">5</span> <span class="toctext">pic_sysphoto: Popping up System Camera window Event</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#pic_photo_or_album:_Popping_up_System_Images_or_Camera_window_Event"><span class="tocnumber">6</span> <span class="toctext">pic_photo_or_album: Popping up System Images or Camera window Event</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#pic_weixin:_Popping_up_WeChat_My_Posts_window_Event"><span class="tocnumber">7</span> <span class="toctext">pic_weixin: Popping up WeChat My Posts window Event</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#location_select:_Popping_up_Location_window_Event"><span class="tocnumber">8</span> <span class="toctext">location_select: Popping up Location window Event</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Pulling_a_Message_Event"><b>Pulling a Message Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[CLICK]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[EVENTKEY]]&gt;&lt;/EventKey&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> CLICK
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event KEY value: corresponds to the KEY value in the user-defined menu API
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="URL_Redirection_Event"><b>URL Redirection Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[VIEW]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[www.qq.com]]&gt;&lt;/EventKey&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> VIEW
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value: set to the URL to be redirected to
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="scancode_push:_Scanning_Event"><b>scancode_push: Scanning Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408090502&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[scancode_push]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;ScanCodeInfo&gt;&lt;ScanType&gt;&lt;![CDATA[qrcode]]&gt;&lt;/ScanType&gt;
+    &lt;ScanResult&gt;&lt;![CDATA[1]]&gt;&lt;/ScanResult&gt;
+    &lt;/ScanCodeInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> scancode_push
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> ScanCodeInfo
+</td>
+<td> Content scanned
+</td></tr>
+<tr>
+<td> ScanType
+</td>
+<td> Scanning type: qrcode (in normal cases)
+</td></tr>
+<tr>
+<td> ScanResult
+</td>
+<td> Scanning result: string corresponding to the QR code
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="scancode_waitmsg:_Scanning_and_Popping_up_.22receiving_message.22_Event"><b>scancode_waitmsg: Scanning and Popping up "receiving message" Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408090606&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[scancode_waitmsg]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;ScanCodeInfo&gt;&lt;ScanType&gt;&lt;![CDATA[qrcode]]&gt;&lt;/ScanType&gt;
+    &lt;ScanResult&gt;&lt;![CDATA[2]]&gt;&lt;/ScanResult&gt;
+    &lt;/ScanCodeInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> scancode_waitmsg
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> ScanCodeInfo
+</td>
+<td> Content scanned
+</td></tr>
+<tr>
+<td> ScanType
+</td>
+<td> Scanning type: qrcode (in normal cases)
+</td></tr>
+<tr>
+<td> ScanResult
+</td>
+<td> Scanning result: string corresponding to the QR code
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="pic_sysphoto:_Popping_up_System_Camera_window_Event"><b>pic_sysphoto: Popping up System Camera window Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408090651&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[pic_sysphoto]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;SendPicsInfo&gt;&lt;Count&gt;1&lt;/Count&gt;
+    &lt;PicList&gt;
+        &lt;item&gt;
+            &lt;PicMd5Sum&gt;&lt;![CDATA[1b5f7c23b5bf75682a53e7b6d163e185]]&gt;&lt;/PicMd5Sum&gt;
+        &lt;/item&gt;
+    &lt;/PicList&gt;
+    &lt;/SendPicsInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> pic_sysphoto
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> SendPicsInfo
+</td>
+<td> Picture content sent
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> Number of pictures sent
+</td></tr>
+<tr>
+<td> PicList
+</td>
+<td> Picture list
+</td></tr>
+<tr>
+<td> PicMd5Sum
+</td>
+<td> Picture' MD5 value; used to verify pictures received if required
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="pic_photo_or_album:_Popping_up_System_Images_or_Camera_window_Event"><b>pic_photo_or_album: Popping up System Images or Camera window Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408090816&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[pic_photo_or_album]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;SendPicsInfo&gt;&lt;Count&gt;1&lt;/Count&gt;
+    &lt;PicList&gt;
+        &lt;item&gt;
+            &lt;PicMd5Sum&gt;&lt;![CDATA[5a75aaca956d97be686719218f275c6b]]&gt;&lt;/PicMd5Sum&gt;
+        &lt;/item&gt;
+    &lt;/PicList&gt;
+    &lt;/SendPicsInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> pic_photo_or_album
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> SendPicsInfo
+</td>
+<td> Picture content sent
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> Number of pictures sent
+</td></tr>
+<tr>
+<td> PicList
+</td>
+<td> Picture list
+</td></tr>
+<tr>
+<td> PicMd5Sum
+</td>
+<td> Picture' MD5 value; used to verify pictures received if required
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="pic_weixin:_Popping_up_WeChat_My_Posts_window_Event"><b>pic_weixin: Popping up WeChat My Posts window Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408090816&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[pic_weixin]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;SendPicsInfo&gt;&lt;Count&gt;1&lt;/Count&gt;
+    &lt;PicList&gt;
+        &lt;item&gt;
+            &lt;PicMd5Sum&gt;&lt;![CDATA[5a75aaca956d97be686719218f275c6b]]&gt;&lt;/PicMd5Sum&gt;
+        &lt;/item&gt;
+    &lt;/PicList&gt;
+    &lt;/SendPicsInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> pic_weixin
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> SendPicsInfo
+</td>
+<td> Picture content sent
+</td></tr>
+<tr>
+<td> Count
+</td>
+<td> Number of pictures sent
+</td></tr>
+<tr>
+<td> PicList
+</td>
+<td> Picture list
+</td></tr>
+<tr>
+<td> PicMd5Sum
+</td>
+<td> Picture' MD5 value; used to verify pictures received if required
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="location_select:_Popping_up_Location_window_Event"><b>location_select: Popping up Location window Event</b></span></h2>
+<p>An example of pushing an XML packet is as follows:
+</p>
+<pre>
+&lt;xml&gt;
+    &lt;ToUserName&gt;&lt;![CDATA[gh_e136c6e50636]]&gt;&lt;/ToUserName&gt;
+    &lt;FromUserName&gt;&lt;![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]&gt;&lt;/FromUserName&gt;
+    &lt;CreateTime&gt;1408091189&lt;/CreateTime&gt;
+    &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
+    &lt;Event&gt;&lt;![CDATA[location_select]]&gt;&lt;/Event&gt;
+    &lt;EventKey&gt;&lt;![CDATA[6]]&gt;&lt;/EventKey&gt;
+    &lt;SendLocationInfo&gt;
+        &lt;Location_X&gt;&lt;![CDATA[23]]&gt;&lt;/Location_X&gt;
+        &lt;Location_Y&gt;&lt;![CDATA[113]]&gt;&lt;/Location_Y&gt;
+        &lt;Scale&gt;&lt;![CDATA[15]]&gt;&lt;/Scale&gt;
+        &lt;Label&gt;&lt;![CDATA[ 广州市海珠区客村艺苑路 106号]]&gt;&lt;/Label&gt;
+        &lt;Poiname&gt;&lt;![CDATA[]]&gt;&lt;/Poiname&gt;
+    &lt;/SendLocationInfo&gt;
+&lt;/xml&gt;
+</pre>
+<p><b>Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center" width="640px">
+<tr>
+<th style="width:120px">Parameter
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> ToUserName
+</td>
+<td> Developer's WeChat ID
+</td></tr>
+<tr>
+<td> FromUserName
+</td>
+<td> Sender's WeChat ID (an OpenID)
+</td></tr>
+<tr>
+<td> CreateTime
+</td>
+<td> Message creation time (Integer)
+</td></tr>
+<tr>
+<td> MsgType
+</td>
+<td> Event
+</td></tr>
+<tr>
+<td> Event
+</td>
+<td> location_select
+</td></tr>
+<tr>
+<td> EventKey
+</td>
+<td> Event key value, set by developer during menu creation
+</td></tr>
+<tr>
+<td> SendLocationInfo
+</td>
+<td> Location information sent
+</td></tr>
+<tr>
+<td> Location_X
+</td>
+<td> X Coordinate information
+</td></tr>
+<tr>
+<td> Location_Y
+</td>
+<td> Y Coordinate information
+</td></tr>
+<tr>
+<td> Scale
+</td>
+<td> Precision. The higher the precision, the higher the scale value
+</td></tr>
+<tr>
+<td> Label
+</td>
+<td> Location information, in the format of string
+</td></tr>
+<tr>
+<td> Poiname
+</td>
+<td> Name of the Moments POI. This field may be null.
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 97/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key doc_wiki_ibg-wiki_ibg_:pcache:idhash:44-0!*!0!!en!*!edit=0 and timestamp 20150319062517 -->
+<div class="printfooter">
+Retrieved from "<a href="index650b.html?title=Event">http://admin.wechat.com/wiki/index.php?title=Event</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo_en_US.png);" href="index4875.html?title=Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				<form class="searchform">
+        <input type="text"   name="search" placeholder="Search Keywords [alt-s]" accesskey="s" class="searchform_text"/>
+        <input type="submit" name="fulltext" value="Search" title="Get page with keywords" class="searchform_btn"/>
+				</form>
+				
+<!-- New Developers Guide -->
+<div class="portal" id='p-New_Developers_Guide'>
+	<h5><span class="portal_arrow"></span>New Developers Guide</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Getting-Started"><a href="index48e2.html?title=Getting_Started">Getting Started</a></li>
+					<li id="n-Developers-Requirements"><a href="indexd0af.html?title=Developers_Requirements">Developers Requirements</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /New Developers Guide -->
+
+<!-- Basic Support -->
+<div class="portal" id='p-Basic_Support'>
+	<h5><span class="portal_arrow"></span>Basic Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Access-Token"><a href="index2e51.html?title=Access_token">Access Token</a></li>
+					<li id="n-IP-Address-List"><a href="index935a.html?title=IP_Address_List">IP Address List</a></li>
+					<li id="n-Return-Codes"><a href="indexde62.html?title=Return_Codes">Return Codes</a></li>
+					<li id="n-API-Call-Limits"><a href="indexbfdb.html?title=API_Call_Limits">API Call Limits</a></li>
+					<li id="n-Transferring-Multimedia-Files"><a href="indexf3da.html?title=Transferring_Multimedia_Files">Transferring Multimedia Files</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Basic Support -->
+
+<!-- Receiving Messages -->
+<div class="portal" id='p-Receiving_Messages'>
+	<h5><span class="portal_arrow"></span>Receiving Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Message-Authentication"><a href="index421d.html?title=Message_Authentication">Message Authentication</a></li>
+					<li id="n-Common-Messages"><a href="index59b0.html?title=Common_Messages">Common Messages</a></li>
+					<li id="n-Event-Messages"><a href="index9e93.html?title=Event_Messages">Event Messages</a></li>
+					<li id="n-Speech-Recognition-Messages"><a href="index4d03.html?title=Speech_Recognition_Messages">Speech Recognition Messages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Receiving Messages -->
+
+<!-- Sending Messages -->
+<div class="portal" id='p-Sending_Messages'>
+	<h5><span class="portal_arrow"></span>Sending Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Callback-Messages"><a href="index617a.html?title=Callback_Messages">Callback Messages</a></li>
+					<li id="n-Customer-Service-Messages"><a href="indexe6db.html?title=Customer_Service_Messages">Customer Service Messages</a></li>
+					<li id="n-Advanced-Broadcast-Interface"><a href="index7545.html?title=Advanced_Broadcast_Interface">Advanced Broadcast Interface</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sending Messages -->
+
+<!-- User Management -->
+<div class="portal" id='p-User_Management'>
+	<h5><span class="portal_arrow"></span>User Management</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Group-Management-API"><a href="index7545-2.html?title=Group_Management_API">Group Management API</a></li>
+					<li id="n-Name-Remarks"><a href="index977b.html?title=Name_Remarks">Name Remarks</a></li>
+					<li id="n-User-Profile"><a href="indexb767.html?title=User_Profile">User Profile</a></li>
+					<li id="n-Follower-List"><a href="indexada8.html?title=Follower_List">Follower List</a></li>
+					<li id="n-User-Location"><a href="indexbaa6.html?title=User_Location">User Location</a></li>
+					<li id="n-User-Profile-via-Web"><a href="index331c.html?title=User_Profile_via_Web">User Profile via Web</a></li>
+					<li id="n-Network-Status"><a href="indexe7cb.html?title=Network_Status">Network Status</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User Management -->
+
+<!-- User-defined Menu -->
+<div class="portal" id='p-User-defined_Menu'>
+	<h5><span class="portal_arrow"></span>User-defined Menu</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Create"><a href="indexb5c7.html?title=Create">Create</a></li>
+					<li id="n-Query"><a href="indexfd99.html?title=Query">Query</a></li>
+					<li id="n-Delete"><a href="index9a86.html?title=Delete">Delete</a></li>
+					<li id="n-Event"><a href="index650b.html?title=Event">Event</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User-defined Menu -->
+
+<!-- Promotion Support -->
+<div class="portal" id='p-Promotion_Support'>
+	<h5><span class="portal_arrow"></span>Promotion Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Generating-Parametric-QR-Code"><a href="index21b1.html?title=Generating_Parametric_QR_Code">Generating Parametric QR Code</a></li>
+					<li id="n-URL-Shortening-API"><a href="index49ae.html?title=URL_Shortening_API">URL Shortening API</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Promotion Support -->
+
+<!-- Data Statistics -->
+<div class="portal" id='p-Data_Statistics'>
+	<h5><span class="portal_arrow"></span>Data Statistics</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Followers-Data"><a href="index17c4.html?title=Followers_Data_API">Followers Data</a></li>
+					<li id="n-Rich-Media-Data"><a href="indexad50.html?title=Rich_Media_Data_API">Rich Media Data</a></li>
+					<li id="n-User-Sent-Messages-Data"><a href="index020e.html?title=Messages_Data_API">User-Sent Messages Data</a></li>
+					<li id="n-Callback-Data"><a href="index836e.html?title=Callback_Data_API">Callback Data</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Data Statistics -->
+
+<!-- Wechat JS-SDK -->
+<div class="portal" id='p-Wechat_JS-SDK'>
+	<h5><span class="portal_arrow"></span>Wechat JS-SDK</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wechat-JS-SDK-document"><a href="index0187.html?title=JS_SDK_DOCUMENT">Wechat JS-SDK document</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Wechat JS-SDK -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer">
+				<ul id="footer-places">
+                    <li id="footer-about"><a target="_blank" href="http://www.tencent.com/en-us/index.shtml">About Tencent</a>&nbsp;|&nbsp; </li>
+          <li id="footer-policy"> <a target="_blank" href="http://wechat.com/en/service_terms.html">Service Terms</a>&nbsp;|&nbsp;</li>
+          <li id="footer-contactus"><a  href="mailto:admin@wechat.com">Contact Us</a></li>
+        </ul>
+				
+				<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both">Copyright&nbsp;&copy; 2012-2015 Tencent. All Rights Reserved.</div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Event", "wgTitle": "Event", "wgAction": "view", "wgArticleId": 44, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 230, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.108 secs. -->			</body>
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=Event by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:14 GMT -->
+</html>
+<!-- IBG, 2015-03-20 --><!-- so -->

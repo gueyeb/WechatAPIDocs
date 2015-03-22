@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=Messages_Data_API by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Messages Data API - WeChat Official Account Admin Platform</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="http://admin.wechat.com/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="WeChat Official Account Admin Platform (en)" />
+<link rel="alternate" type="application/atom+xml" title="WeChat Official Account Admin Platform Atom feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadeb8e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Messages_Data_API skin-vector">
+		
+<!--网站头部-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<div class="headWrap">
+	<div class="header"  id="header">
+		<div class="headerContent">
+			<div class="left">
+      <a class="block" href="http://admin.wechat.com/wiki">
+        <img src="images/logo_en_US.png" alt="WeChat Official Account Admin Platform">
+      </a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>		
+</div>
+
+<div class="bottomnav">
+		<a href="http://admin.wechat.com/wiki" title="Log in" class="loginbtn" style=""></a>
+			<a class="topbtn" href="javascript:;" onclick="document.getElementById('header').scrollIntoView(true);"></a>
+</div>
+<script type="text/javascript" src="js/wiki_en_US4bcb.js?20120215"></script>
+<!--[if IE 6]>
+<style type="text/css">
+html{background-image:url(about:blank);background-attachment:fixed;}
+#content{overflow-x:hidden;}
+.bottomnav{position:absolute;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-30));}
+</style>
+<![endif]-->
+<!--网站头部-->
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div class="mainwrapper">
+		<!-- content -->
+		<div id="content">
+      			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+        <h1 id="firstHeading" class="firstHeading">Messages Data API<div><a href="javascript:;" onclick="document.referrer ?location.replace(document.referrer):location.href='index4875.html';return false;" class="back">Back</a></div></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent" class="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From WeChat Official Account Admin Platform</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p>Through these data APIs, developers can obtain data similar to but more flexible than data provided on the WeChat Official Account Admin Platform web site and then perform additional advanced processing as required.
+</p><p>The Data APIs are only available to developers with a certified official account.
+</p><p>Notes:
+</p>
+<pre>
+1. Official account data provided from the data APIs only includes data after December 1, 2014. Any data provided from  before this date will likely be inaccurate.
+2. In order to speed up subsequent user access and reduce API calling time, we suggest developers store data obtained through API calls in their own databases.
+</pre>
+<p>Messages data APIs contain API calls used to obtain data on messages sent by followers to the official account from data statistical modules on the WeChat Official Account Admin Platform. The provided APIs are as follows (messages keyword data APIs are not yet available):
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center">
+<tr>
+<th style="width:380px">API Name
+</th>
+<th style="width:150px">Maximum Time Span
+</th>
+<th style="width:600px">API Calling URL (https Required)
+</th></tr>
+<tr>
+<td> Obtain user-sent messages profile data (getupstreammsg)
+</td>
+<td> 7
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsg?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsg?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages data by hour (getupstreammsghour)
+</td>
+<td> 1
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsghour?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsghour?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages data by week (getupstreammsgweek)
+</td>
+<td> 30
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsgweek?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsgweek?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages data by month (getupstreammsgmonth)
+</td>
+<td> 30
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsgmonth?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsgmonth?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages distribution data (getupstreammsgdist)
+</td>
+<td> 15
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsgdist?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsgdist?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages distribution data by week (getupstreammsgdistweek)
+</td>
+<td> 30
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsgdistweek?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsgdistweek?access_token=ACCESS_TOKEN</a>
+</td></tr>
+<tr>
+<td> Obtain user-sent messages distribution data by month (getupstreammsgdistmonth)
+</td>
+<td> 30
+</td>
+<td> <a href="https://api.weixin.qq.com/datacube/getupstreammsgdistmonth?access_token=ACCESS_TOKEN" class="external free" rel="nofollow">https://api.weixin.qq.com/datacube/getupstreammsgdistmonth?access_token=ACCESS_TOKEN</a>
+</td></tr>
+</table>
+<p>The maximum time span indicates the maximum time range for obtaining data during one API calling event. For example, if the maximum time span is 7, data from up to 7 days can be obtained once. Please obtain the actual value of access_token through "Obtain access_token".
+</p><p>Please note that the weekly/monthly data is marked with the first day of the week/month (1st of each month or Monday, respectively). The weekly/monthly data can be obtained by calling the corresponding API after that week/month has finished. For example, you can call the API for obtaining monthly data on December 1st with November 1st and November 5th as the begin_date and end_date to obtain the monthly data of November 1st (i.e., monthly data of November).
+</p><p><b>Request Description</b>
+</p><p>User-sent Messages data APIs (including all APIs in the list) should use the HTTP POST method to send parameters to the corresponding API calling URL. A sample set of parameters is provided below:
+</p>
+<pre>
+{ 
+    &quot;begin_date&quot;: &quot;2014-12-07&quot;, 
+    &quot;end_date&quot;: &quot;2014-12-08&quot;
+}
+</pre>
+<p><b>Calling Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center">
+<tr>
+<th style="width:380px">Parameter
+</th>
+<th style="width:150px">Required
+</th>
+<th style="width:600px">Description
+</th></tr>
+<tr>
+<td> access_token
+</td>
+<td> Yes
+</td>
+<td> Access token providing authorization to the calling API
+</td></tr>
+<tr>
+<td> begin_date
+</td>
+<td> Yes
+</td>
+<td> Start date for queried data. The difference between begin_date and end_date should be less than the maximum time span (for example, if the maximum time span is 1, begin_date and end_date should be identical); otherwise, an error will be reported.
+</td></tr>
+<tr>
+<td> end_date
+</td>
+<td> Yes
+</td>
+<td> End date for queried data, yesterday’s date as the maximum possible value
+</td></tr>
+</table>
+<p><b>Return Description</b>
+</p><p>An example of a successful JSON response from the getupstreammsg API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-07&quot;, 
+           &quot;msg_type&quot;: 1, 
+           &quot;msg_user&quot;: 282, 
+           &quot;msg_count&quot;: 817
+       }
+	// Below would be data with the same ref_date and different msg_type, or with a different ref_date (within the time range)
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsghour API is included below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-07&quot;, 
+           &quot;ref_hour&quot;: 0, 
+           &quot;msg_type&quot;: 1, 
+           &quot;msg_user&quot;: 9, 
+           &quot;msg_count&quot;: 10
+       }
+	// Below would be data with the same ref_hour and different msg_type, or with a different ref_hour. As the maximum time span is 1, ref_date is a fixed value.
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsgweek API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-08&quot;, 
+           &quot;msg_type&quot;: 1, 
+           &quot;msg_user&quot;: 16, 
+           &quot;msg_count&quot;: 27
+       }
+	// Below would be data with the same ref_date and different msg_type, or with a different ref_date
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsgmonth API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-11-01&quot;, 
+           &quot;msg_type&quot;: 1, 
+           &quot;msg_user&quot;: 7989, 
+           &quot;msg_count&quot;: 42206
+       }
+	// Below would be data with the same ref_date and different msg_type, or with a different ref_date
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsgdist API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-07&quot;, 
+           &quot;count_interval&quot;: 1, 
+           &quot;msg_user&quot;: 246
+       }
+	// Below would be data with the same ref_date and different count_interval, or with a different ref_date
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsgdistweek API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-07&quot;, 
+           &quot;count_interval&quot;: 1, 
+           &quot;msg_user&quot;: 246
+       }
+	// Below would be data with the same ref_date and different count_interval, or with a different ref_date
+   ]
+}
+</pre>
+<p>An example of a successful JSON response from the getupstreammsgdistmonth API is provided below:
+</p>
+<pre>
+{ 
+   &quot;list&quot;: [ 
+       { 
+           &quot;ref_date&quot;: &quot;2014-12-07&quot;, 
+           &quot;count_interval&quot;: 1, 
+           &quot;msg_user&quot;: 246
+       }
+	// Below would be data with the same ref_date and different count_interval, or with a different ref_date
+   ]
+}
+</pre>
+<p><b>Return Parameter Description</b>
+</p>
+<table border="1" cellspacing="0" cellpadding="4" align="center">
+<tr>
+<th style="width:380px">Parameter
+</th>
+<th style="width:600px">Description
+</th></tr>
+<tr>
+<td> ref_date
+</td>
+<td> Date of the data, between begin_date and end_date
+</td></tr>
+<tr>
+<td> ref_hour
+</td>
+<td> Hour of the data, from 000 to 2300, indicating from [000,100) (first hour of each day) to [2300,2400) (last hour of each day)
+</td></tr>
+<tr>
+<td> msg_type
+</td>
+<td> Message type:
+<p>1: Text, 2: Image, 3: Audio, 4: Video, 6: Third-party application (i.e. URL)
+</p>
+</td></tr>
+<tr>
+<td> msg_user
+</td>
+<td> Number of followers who sent messages to the official account
+</td></tr>
+<tr>
+<td> msg_count
+</td>
+<td> Number of user-sent messages
+</td></tr>
+<tr>
+<td> count_interval
+</td>
+<td> Interval for the number of messages user has sent to the official account in the specified day: 0: 0, 1: 1-5, 2: 6-10, 3: more than 10
+</td></tr>
+<tr>
+<td> int_page_read_count
+</td>
+<td> Number of views of the article web page
+</td></tr>
+<tr>
+<td> ori_page_read_user
+</td>
+<td> Number of followers who viewed the original web page (by clicking "Read more" on the article web page), 0 if there is no the original web page
+</td></tr>
+</table>
+<p>An error code will be returned upon failure. For details about error codes, please see <a href="indexde62.html?title=Return_Codes" class="external text" rel="nofollow">Return Codes</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 28/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key doc_wiki_ibg-wiki_ibg_:pcache:idhash:66-0!*!0!!*!*!edit=0 and timestamp 20150319100152 -->
+<div class="printfooter">
+Retrieved from "<a href="index020e.html?title=Messages_Data_API">http://admin.wechat.com/wiki/index.php?title=Messages_Data_API</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(images/logo_en_US.png);" href="index4875.html?title=Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				<form class="searchform">
+        <input type="text"   name="search" placeholder="Search Keywords [alt-s]" accesskey="s" class="searchform_text"/>
+        <input type="submit" name="fulltext" value="Search" title="Get page with keywords" class="searchform_btn"/>
+				</form>
+				
+<!-- New Developers Guide -->
+<div class="portal" id='p-New_Developers_Guide'>
+	<h5><span class="portal_arrow"></span>New Developers Guide</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Getting-Started"><a href="index48e2.html?title=Getting_Started">Getting Started</a></li>
+					<li id="n-Developers-Requirements"><a href="indexd0af.html?title=Developers_Requirements">Developers Requirements</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /New Developers Guide -->
+
+<!-- Basic Support -->
+<div class="portal" id='p-Basic_Support'>
+	<h5><span class="portal_arrow"></span>Basic Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Access-Token"><a href="index2e51.html?title=Access_token">Access Token</a></li>
+					<li id="n-IP-Address-List"><a href="index935a.html?title=IP_Address_List">IP Address List</a></li>
+					<li id="n-Return-Codes"><a href="indexde62.html?title=Return_Codes">Return Codes</a></li>
+					<li id="n-API-Call-Limits"><a href="indexbfdb.html?title=API_Call_Limits">API Call Limits</a></li>
+					<li id="n-Transferring-Multimedia-Files"><a href="indexf3da.html?title=Transferring_Multimedia_Files">Transferring Multimedia Files</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Basic Support -->
+
+<!-- Receiving Messages -->
+<div class="portal" id='p-Receiving_Messages'>
+	<h5><span class="portal_arrow"></span>Receiving Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Message-Authentication"><a href="index421d.html?title=Message_Authentication">Message Authentication</a></li>
+					<li id="n-Common-Messages"><a href="index59b0.html?title=Common_Messages">Common Messages</a></li>
+					<li id="n-Event-Messages"><a href="index9e93.html?title=Event_Messages">Event Messages</a></li>
+					<li id="n-Speech-Recognition-Messages"><a href="index4d03.html?title=Speech_Recognition_Messages">Speech Recognition Messages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Receiving Messages -->
+
+<!-- Sending Messages -->
+<div class="portal" id='p-Sending_Messages'>
+	<h5><span class="portal_arrow"></span>Sending Messages</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Callback-Messages"><a href="index617a.html?title=Callback_Messages">Callback Messages</a></li>
+					<li id="n-Customer-Service-Messages"><a href="indexe6db.html?title=Customer_Service_Messages">Customer Service Messages</a></li>
+					<li id="n-Advanced-Broadcast-Interface"><a href="index7545.html?title=Advanced_Broadcast_Interface">Advanced Broadcast Interface</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sending Messages -->
+
+<!-- User Management -->
+<div class="portal" id='p-User_Management'>
+	<h5><span class="portal_arrow"></span>User Management</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Group-Management-API"><a href="index7545-2.html?title=Group_Management_API">Group Management API</a></li>
+					<li id="n-Name-Remarks"><a href="index977b.html?title=Name_Remarks">Name Remarks</a></li>
+					<li id="n-User-Profile"><a href="indexb767.html?title=User_Profile">User Profile</a></li>
+					<li id="n-Follower-List"><a href="indexada8.html?title=Follower_List">Follower List</a></li>
+					<li id="n-User-Location"><a href="indexbaa6.html?title=User_Location">User Location</a></li>
+					<li id="n-User-Profile-via-Web"><a href="index331c.html?title=User_Profile_via_Web">User Profile via Web</a></li>
+					<li id="n-Network-Status"><a href="indexe7cb.html?title=Network_Status">Network Status</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User Management -->
+
+<!-- User-defined Menu -->
+<div class="portal" id='p-User-defined_Menu'>
+	<h5><span class="portal_arrow"></span>User-defined Menu</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Create"><a href="indexb5c7.html?title=Create">Create</a></li>
+					<li id="n-Query"><a href="indexfd99.html?title=Query">Query</a></li>
+					<li id="n-Delete"><a href="index9a86.html?title=Delete">Delete</a></li>
+					<li id="n-Event"><a href="index650b.html?title=Event">Event</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /User-defined Menu -->
+
+<!-- Promotion Support -->
+<div class="portal" id='p-Promotion_Support'>
+	<h5><span class="portal_arrow"></span>Promotion Support</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Generating-Parametric-QR-Code"><a href="index21b1.html?title=Generating_Parametric_QR_Code">Generating Parametric QR Code</a></li>
+					<li id="n-URL-Shortening-API"><a href="index49ae.html?title=URL_Shortening_API">URL Shortening API</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Promotion Support -->
+
+<!-- Data Statistics -->
+<div class="portal" id='p-Data_Statistics'>
+	<h5><span class="portal_arrow"></span>Data Statistics</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Followers-Data"><a href="index17c4.html?title=Followers_Data_API">Followers Data</a></li>
+					<li id="n-Rich-Media-Data"><a href="indexad50.html?title=Rich_Media_Data_API">Rich Media Data</a></li>
+					<li id="n-User-Sent-Messages-Data"><a href="index020e.html?title=Messages_Data_API">User-Sent Messages Data</a></li>
+					<li id="n-Callback-Data"><a href="index836e.html?title=Callback_Data_API">Callback Data</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Data Statistics -->
+
+<!-- Wechat JS-SDK -->
+<div class="portal" id='p-Wechat_JS-SDK'>
+	<h5><span class="portal_arrow"></span>Wechat JS-SDK</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wechat-JS-SDK-document"><a href="index0187.html?title=JS_SDK_DOCUMENT">Wechat JS-SDK document</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Wechat JS-SDK -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer">
+				<ul id="footer-places">
+                    <li id="footer-about"><a target="_blank" href="http://www.tencent.com/en-us/index.shtml">About Tencent</a>&nbsp;|&nbsp; </li>
+          <li id="footer-policy"> <a target="_blank" href="http://wechat.com/en/service_terms.html">Service Terms</a>&nbsp;|&nbsp;</li>
+          <li id="footer-contactus"><a  href="mailto:admin@wechat.com">Contact Us</a></li>
+        </ul>
+				
+				<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both">Copyright&nbsp;&copy; 2012-2015 Tencent. All Rights Reserved.</div>
+		</div>
+		<!-- /footer -->
+		
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Messages_Data_API", "wgTitle": "Messages Data API", "wgAction": "view", "wgArticleId": 66, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 273, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served in 0.111 secs. -->			</body>
+
+<!-- Mirrored from admin.wechat.com/wiki/index.php?title=Messages_Data_API by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2015 02:16:26 GMT -->
+</html>
+<!-- IBG, 2015-03-20 --><!-- so -->
